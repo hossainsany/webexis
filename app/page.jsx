@@ -1,5 +1,16 @@
+import About from '@components/About';
+import Hero from '@components/Hero';
+import { redirect } from 'next/navigation';
+
 const Home = () => {
-    return <div>webexis</div>;
+    redirect('/coming-soon');
+
+    return (
+        <>
+            <Hero />
+            <About />
+        </>
+    );
 };
 
 export default Home;

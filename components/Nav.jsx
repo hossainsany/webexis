@@ -10,7 +10,7 @@ const Nav = () => {
 
     return (
         <nav
-            className={`w-full flex justify-between items-center px-5 lg:px-20 py-2 bg-dark-gray relative `}
+            className={`w-full flex justify-between items-center px-5 lg:px-20 py-2 bg-dark-gray relative border-b-[1px] border-accent/[0.3] `}
         >
             <Link href='/' className='logo inline-block text-white'>
                 <Image src='/assets/webexis-logo.png' alt='webexis logo' height={60} width={60} />
@@ -38,7 +38,7 @@ const Nav = () => {
                 </button>
             </div>
 
-            <NavLinks burgerToggle={burgerToggle} />
+            <NavLinks burgerToggle={burgerToggle} setBurgerToggle={setBurgerToggle} />
         </nav>
     );
 };
