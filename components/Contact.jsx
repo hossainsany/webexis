@@ -1,14 +1,34 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Contact = () => {
+    const router = useRouter();
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const formData = new FormData(e.target);
+
+        fetch('https://getform.io/f/3d91164b-c3ce-4a43-b0d9-cc09b21b048e', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                Accept: 'application/json',
+            },
+        })
+            .then((res) => {
+                console.log(res);
+                router.push('/forms/form-success');
+            })
+            .catch((err) => {
+                console.log(err);
+                router.push("'/forms/400'");
+            });
     };
 
     return (
-        <section className='bg-dark-white'>
+        <section className='bg-light-gray'>
             <div className='container mx-auto'>
                 <div className='text-center  mb-[50px] md:mb-[100px]'>
                     <h2 className='text-4xl font-semibold'>Contact Us</h2>
@@ -31,21 +51,24 @@ const Contact = () => {
                             type='text'
                             placeholder='Your Name'
                             name='name'
-                            className='px-6 py-3 mb-3 rounded-md bg-dark-gray/[75%] text-dark-white w-full'
+                            className='px-6 py-3 mb-3 rounded-md bg-dark-gray/[75%] text-dark-white w-full '
+                            required
                         />
                         <input
                             type='email'
                             placeholder='Your Email'
                             name='email'
-                            className='px-6 py-3 mb-3 rounded-md bg-dark-gray/[75%] text-dark-white w-full'
+                            className='px-6 py-3 mb-3 rounded-md bg-dark-gray/[75%] text-dark-white w-full '
+                            required
                         />
                         <textarea
                             name='message'
                             placeholder='Your Message'
                             rows='8'
-                            className='px-6 py-3 mb-3 rounded-md bg-dark-gray/[75%] text-dark-white w-full'
+                            className='px-6 py-3 mb-3 rounded-md bg-dark-gray/[75%] text-dark-white w-full '
+                            required
                         ></textarea>
-                        <button type='submit' className='btn rounded-md w-full'>
+                        <button type='submit' className='btn rounded-md w-full '>
                             Submit
                         </button>
                     </form>

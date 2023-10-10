@@ -64,16 +64,16 @@ const Footer = () => {
                         </h3>
                         <form
                             onSubmit={handleSubmit}
-                            className='flex justify-center items-center flex-wrap md:block'
+                            className='flex justify-center items-center w-full md:flex-wrap md:block'
                         >
                             <input
                                 type='text'
                                 placeholder='Your Email'
-                                className='py-[9.5px]  px-4 w-[240px] md:w-[215px] lg:w-[210px] xl:w-[255px] text-black rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:box-border q360'
+                                className='py-[10px] max-h-[100px] w-full px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] text-black rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:box-border '
                             />
                             <button
                                 type='submit'
-                                className='btn rounded-br rounded-tr focus-visible:outline focus-visible:outline-2 focus-visible:box-border'
+                                className='btn max-h-[100px] rounded-br rounded-tr focus-visible:outline focus-visible:outline-2 focus-visible:box-border'
                             >
                                 Submit
                             </button>

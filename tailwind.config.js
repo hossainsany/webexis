@@ -9,6 +9,7 @@ module.exports = {
         extend: {
             colors: {
                 'dark-gray': '#1A1B1D',
+                'light-gray': '#222326',
                 'dark-white': '#D9D9D9',
                 accent: '#C04D39',
             },

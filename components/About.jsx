@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const About = () => {
     return (
-        <section className='bg-dark-white ' id='about'>
+        <section className='bg-light-gray ' id='about'>
             <div className='container mx-auto'>
                 <div className='text-center  mb-[50px] md:mb-[100px]'>
                     <h2 className='text-4xl font-semibold'>About Us</h2>

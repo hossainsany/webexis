@@ -22,13 +22,13 @@ const Faq = () => {
                 <div className='flex flex-col justify-center items-center'>
                     {faq.map(({ id, title, body }, i) => (
                         <div
-                            className={`w-full bg-dark-white  py-4 px-5 md:px-10 rounded-md relative cursor-pointer z-10 overflow-visible ${
+                            className={`w-full bg-light-gray  py-4 px-5 md:px-10 rounded-md relative cursor-pointer overflow-visible ${
                                 activeIndex === i ? 'mb-[19rem] md:mb-44 lg:mb-36 ' : 'mb-5'
                             }`}
                             onClick={() => handleClick(i)}
                             key={id}
                         >
-                            <div className='flex justify-between items-center'>
+                            <div className='flex justify-between items-center z-0'>
                                 <h3 className='text-base md:text-lg font-semibold'>{title}</h3>
                                 {activeIndex === i ? (
                                     <Image
@@ -46,12 +46,11 @@ const Faq = () => {
                                     />
                                 )}
                             </div>
-
                             <p
-                                className={`bg-dark-white/[55%] absolute w-full left-0 px-5 md:px-14 pt-7 pb-5 rounded-md z-[-1] transition-300  ${
+                                className={`bg-light-gray/[55%] absolute w-full left-0 px-5 md:px-14 pt-6 pb-5 md:pt-7 md:pb-5 rounded-md  transition-300  ${
                                     activeIndex !== i
-                                        ? 'w-full top-0 pt-0 pb-0 opacity-0 text-dark-white'
-                                        : 'top-[55px]'
+                                        ? 'w-full top-0 pt-0 pb-0 opacity-0 z-[-1] text-dark-white'
+                                        : 'top-[75px] md:top-[55px] opacity-100'
                                 }`}
                             >
                                 {body}

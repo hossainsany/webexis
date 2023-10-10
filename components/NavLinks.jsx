@@ -15,14 +15,15 @@ const NavLinks = ({ burgerToggle, setBurgerToggle }) => {
             }`}
         >
             {navLinks.map(({ id, link, text }) => (
-                <Link
-                    key={id}
-                    href={link}
-                    onClick={handleClick}
-                    className='text-white hover:text-accent transition-all pr-10 mb-7 last:mb-0 last:pr-0 inline-block lg:mb-0'
-                >
-                    {text}
-                </Link>
+                <li key={id} className='pr-10 mb-7 lg:mb-0 last:mb-0 last:pr-0'>
+                    <Link
+                        href={link}
+                        onClick={handleClick}
+                        className='text-white hover:text-accent transition-all  inline-block '
+                    >
+                        {text}
+                    </Link>
+                </li>
             ))}
         </ul>
     );
