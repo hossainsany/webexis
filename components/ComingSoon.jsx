@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ComingSoon = () => {
     return (
         <section className='bg-dark-white min-h-[42vh] flex items-center justify-center text-center'>
