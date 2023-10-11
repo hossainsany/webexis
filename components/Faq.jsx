@@ -29,7 +29,7 @@ const Faq = () => {
                             key={id}
                         >
                             <div className='flex justify-between items-center z-0'>
-                                <h3 className='text-base md:text-lg font-semibold'>{title}</h3>
+                                <h3 className='text-base md:text-lg font-semibold pr-3'>{title}</h3>
                                 {activeIndex === i ? (
                                     <Image
                                         src='/assets/minus.svg'
