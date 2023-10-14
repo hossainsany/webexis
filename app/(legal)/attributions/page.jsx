@@ -91,6 +91,51 @@ const icons = [
     },
 ];
 
+const images = [
+    {
+        id: 0,
+        title: 'Image',
+        src: '/assets/web-development-blog2.jpg',
+        link: 'https://unsplash.com/',
+        linkText: 'Icons by Unsplash',
+    },
+    {
+        id: 7,
+        title: 'Image',
+        src: '/assets/web-development-blog.jpg',
+        link: 'https://unsplash.com/',
+        linkText: 'Icons by Unsplash',
+    },
+    {
+        id: 5,
+        title: 'Image',
+        src: '/assets/web-design-blog2.jpg',
+        link: 'https://unsplash.com/',
+        linkText: 'Icons by Unsplash',
+    },
+    {
+        id: 6,
+        title: 'Image',
+        src: '/assets/web-design-blog.jpg',
+        link: 'https://unsplash.com/',
+        linkText: 'Icons by Unsplash',
+    },
+    {
+        id: 1,
+        title: 'Image',
+        src: '/assets/marketing-blog2.jpg',
+        link: 'https://unsplash.com/',
+        linkText: 'Icons by Unsplash',
+    },
+    {
+        id: 66,
+        title: 'Image',
+        src: '/assets/marketing-blog.jpg',
+        link: 'https://unsplash.com/',
+        linkText: 'Icons by Unsplash',
+    },
+];
+
 const AttributionsPage = () => {
     return (
         <section className='bg-light-gray'>
@@ -126,7 +171,28 @@ const AttributionsPage = () => {
                     </div>
                 </div>
                 <div className='mb-8'>
-                    <h2 className='text-2xl font-semibold pb-3'>Infographics:</h2>
+                    <h2 className='text-2xl font-semibold pb-3'>Images:</h2>
+                    <div className='flex flex-col md:flex-row items-center justify-between flex-wrap'>
+                        {images.map(({ id, title, src, link, linkText }) => (
+                            <div
+                                key={id}
+                                className='w-full md:w-[24%] mb-5 bg-dark-gray rounded-md overflow-hidden px-2 lg:px-5'
+                            >
+                                <div className='relative min-h-[200px] w-full'>
+                                    <Image src={src} alt={title} fill className='object-cover' />
+                                </div>
+                                <div className='p-2 lg:p-5'>
+                                    <h3 className='text-xl font-semibold pb-2'>{title}</h3>
+                                    <Link href={link} className='text-accent hover:underline'>
+                                        {linkText}
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className='mb-8'>
+                    <h2 className='text-2xl font-semibold pb-3'>Images:</h2>
                     <div className='flex flex-col md:flex-row items-center justify-between flex-wrap'>
                         {icons.map(({ id, title, src, link, linkText }) => (
                             <div

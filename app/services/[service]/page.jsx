@@ -1,29 +1,62 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { notFound, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+import { servicePages } from '@constants';
+import { ServiceBlog } from '@components';
 
 const Service = () => {
-    const pathName = usePathname();
-    const [path, setPath] = useState('');
+    const [blogs, setBlogs] = useState([]);
 
-    console.log(path);
+    const pathName = usePathname();
+
+    const [title, setTitle] = useState('');
+    const [img, setImg] = useState('');
 
     useEffect(() => {
-        const capitalizePath = () => {
-            setPath(pathName.slice(10, 11).toUpperCase() + pathName.slice(11));
+        const handleTitle = () => {
+            let found = false;
+
+            servicePages.map((blog) => {
+                if (pathName === blog.link) {
+                    setTitle(blog.pageTitle);
+                    setImg(blog.headerImg);
+                    setBlogs([blog]);
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                notFound();
+            }
         };
 
-        capitalizePath();
-    }, [pathName]);
+        handleTitle();
+    }, []);
 
     return (
-        <section className='bg-light-gray min-h-[45vh] flex justify-center items-center text-center'>
-            <div className='container mx-auto'>
-                <h1 className='text-2xl font-semibold'>{path} Page in currently unavailable.</h1>
-                <p className='pt-2'>This website is still under development.</p>
+        <div className=''>
+            <div className='w-full min-h-[30vh]  relative before:absolute before:top-0 before:left-0 bg-black drop-shadow-none '>
+                <Image
+                    src={img}
+                    alt='generic background images for services we offer'
+                    className='object-cover  drop-shadow-none'
+                    fill
+                />
+                <div className='absolute inset-0 bg-black bg-opacity-50'></div>
+
+                <h1 className='absolute top-[50%] left-[50%] text-5xl text-center  md:text-6xl font-semibold translate-y-[-50%] translate-x-[-50%]'>
+                    {title}
+                </h1>
             </div>
-        </section>
+            <div className='py-[100px] bg-light-gray px-5 lg:px-0'>
+                <div className='container mx-auto'>
+                    <ServiceBlog blogs={blogs} />
+                </div>
+            </div>
+        </div>
     );
 };
 

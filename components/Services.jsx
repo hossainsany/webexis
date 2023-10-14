@@ -12,6 +12,7 @@ const Services = ({ bgColor, itemColor }) => {
                 <div className='flex flex-col md:flex-row justify-between items-center'>
                     {services.map(({ id, title, body, src, link }) => (
                         <ImageCard
+                            key={id}
                             id={id}
                             title={title}
                             body={body}

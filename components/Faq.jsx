@@ -46,15 +46,15 @@ const Faq = () => {
                                     />
                                 )}
                             </div>
-                            <p
+                            <div
                                 className={`bg-light-gray/[55%] absolute w-full left-0 px-5 md:px-14 pt-6 pb-5 md:pt-7 md:pb-5 rounded-md  transition-300  ${
                                     activeIndex !== i
                                         ? 'w-full top-0 pt-0 pb-0 opacity-0 z-[-1] text-dark-white'
-                                        : 'top-[75px] md:top-[55px] opacity-100'
+                                        : 'top-[95%] md:top-[55px] opacity-100'
                                 }`}
                             >
-                                {body}
-                            </p>
+                                <p>{body}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

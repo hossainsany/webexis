@@ -12,12 +12,15 @@ const Nav = () => {
     return (
         <nav className='w-full flex justify-between items-center px-5 lg:px-2 xl:px-0 py-2 bg-dark-gray border-b-[1px] border-accent/[0.3] sticky top-0 left-0 z-50'>
             <div className='container mx-auto flex justify-between items-center'>
-                <Link href='/' className='logo inline-block text-white'>
+                <Link
+                    href='/'
+                    className='logo inline-block text-white h-[50px] w-[50px] lg:h-[60px] lg:w-[60px] relative'
+                >
                     <Image
                         src='/assets/webexis-logo.png'
                         alt='webexis logo'
-                        height={60}
-                        width={60}
+                        className='object-cover'
+                        fill
                     />
                 </Link>
 

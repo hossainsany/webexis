@@ -1,7 +1,6 @@
 import { Err } from '@components';
-import Link from 'next/link';
 
-const Found = () => {
+const NotFound = () => {
     return (
         <section className='min-h-[45vh] mx-auto flex flex-col justify-center items-center text-center bg-light-gray'>
             <Err
@@ -13,4 +12,4 @@ const Found = () => {
     );
 };
 
-export default Found;
+export default NotFound;

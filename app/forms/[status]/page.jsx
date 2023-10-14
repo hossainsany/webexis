@@ -6,7 +6,6 @@ import { Err } from '@components';
 const formStatus = () => {
     const pathName = usePathname();
 
-    console.log(pathName);
     return (
         <section className='min-h-[45vh] mx-auto flex flex-col justify-center items-center text-center bg-light-gray'>
             <div className='container mx-auto'>
