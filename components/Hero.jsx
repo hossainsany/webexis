@@ -3,7 +3,13 @@ import Link from 'next/link';
 
 const Hero = () => {
     return (
-        <section className='bg-dark-gray min-h-[92vh] md:min-h-[92.5vh] flex justify-center items-center relative'>
+        <section className='bg-dark-gray min-h-[92vh] md:min-h-[92.5vh] flex justify-center items-center relative overflow-hidden'>
+            <div className='absolute top-[-550px] left-[-196px]  h-[800px] w-[350px] md:w-[400px] rotate-[186deg] lg:rotate-[175deg]'>
+                <Image src='/assets/circle-lines.svg' alt='circle made with multiple lines' fill />
+            </div>
+            <div className='absolute bottom-[-100px] right-[-120px]  h-[400px] w-[315px] md:w-[500px] rotate-[12deg] opacity-70'>
+                <Image src='/assets/wave.svg' alt='circle made with multiple lines' fill />
+            </div>
             <div className='container mx-auto h-full flex flex-col md:flex-row items-center justify-between'>
                 <div className='text text-center  order-2 md:order-1 md:text-start text-white pb-5 md:pb-0'>
                     <h1 className='text-5xl lg:text-6xl font-bold pb-3'>WebExis</h1>
