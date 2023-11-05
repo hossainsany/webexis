@@ -11,5 +11,6 @@ export { default as Faq } from './Faq';
 export { default as Contact } from './Contact';
 export { default as ContactForm } from './ContactForm';
 export { default as Footer } from './Footer';
+export { default as ToTop } from './ToTop';
 
 export { default as Err } from './Err';

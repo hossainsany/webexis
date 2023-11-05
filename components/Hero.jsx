@@ -3,7 +3,10 @@ import Link from 'next/link';
 
 const Hero = () => {
     return (
-        <section className='bg-dark-gray min-h-[92vh] md:min-h-[92.5vh] flex justify-center items-center relative overflow-hidden'>
+        <section
+            className='bg-dark-gray min-h-[92vh] md:min-h-[92.5vh] flex justify-center items-center relative overflow-hidden'
+            id='top'
+        >
             <div className='absolute top-[-550px] left-[-196px]  h-[800px] w-[350px] md:w-[400px] rotate-[186deg] lg:rotate-[175deg]'>
                 <Image src='/assets/circle-lines.svg' alt='circle made with multiple lines' fill />
             </div>

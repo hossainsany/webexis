@@ -61,8 +61,8 @@ const About = () => {
                             online presence? Let&apos;s start your digital success story today!
                         </p>
                     </div>
-                    <div className='order-1 md:order-2 w-full md:flex-[40%] lg:flex-[30%] 2xl:flex-[25%]'>
-                        <div className=' rounded-lg overflow-hidden min-h-[300px] md:min-h-[550px] relative mb-[50px] md:mb-0'>
+                    <div className='order-1 md:order-2 '>
+                        <div className=' rounded-lg overflow-hidden h-[450px] md:h-[450px] lg:h-[545px] min-w-[338px] lg:min-w-[400px] relative mb-[50px] md:mb-0 ms:aspect-[3/4] '>
                             <Image
                                 src='/assets/about-img.jpg'
                                 alt='laptop on a wooden desk'

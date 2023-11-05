@@ -1,4 +1,4 @@
-import { Hero, About, Faq, Contact, Services, Projects, Cta } from '@components';
+import { Hero, About, Faq, Contact, Services, Projects, Cta, ToTop } from '@components';
 
 const Home = () => {
     return (
@@ -10,6 +10,7 @@ const Home = () => {
             <Cta /> {/* palceholder for projects */}
             <Faq />
             <Contact />
+            <ToTop />
         </>
     );
 };

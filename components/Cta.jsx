@@ -14,7 +14,7 @@ const Cta = () => {
                     </p>
                 </div>
                 <div className='flex-1 flex justify-start md:justify-end pt-4 md:pt-0'>
-                    <Link href='/contact' className='btn rounded-full min-w-[148px]'>
+                    <Link href='/contact' className='btn rounded-full md:min-w-[135px] xl:min-w-0'>
                         Contact Us
                     </Link>
                 </div>
