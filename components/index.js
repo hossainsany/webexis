@@ -1,0 +1,14 @@
+export { default as Navbar } from './Navbar';
+export { default as NavLinks } from './NavLinks';
+export { default as Hero } from './Hero';
+export { default as Services } from './Services';
+export { default as CTA } from './CTA';
+export { default as Portfolio } from './Portfolio';
+export { default as USP } from './USP';
+export { default as Testimonials } from './Testimonials';
+export { default as Review } from './Review';
+export { default as Contact } from './Contact';
+export { default as Footer } from './Footer';
+export { default as BurgerMenu } from './BurgerMenu';
+export { default as Cards } from './Cards';
+export { default as ComingSoon } from './ComingSoon';
