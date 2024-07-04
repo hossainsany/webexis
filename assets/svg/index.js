@@ -4,3 +4,6 @@ export { default as Instagram } from './Instagram.svg';
 export { default as Linkedin } from './Linkedin.svg';
 export { default as Twitter } from './Twitter.svg';
 export { default as XIcon } from './XIcon.svg';
+export { default as Sun } from './Sun.svg';
+export { default as Moon } from './Moon.svg';
+export { default as Spinner } from './Spinner.svg';

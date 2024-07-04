@@ -31,7 +31,7 @@ const USP = () => {
     ];
 
     return (
-        <section className='py-24 bg-lightBg'>
+        <section className='py-24 bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'>
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-0'>
                 <div className='text md:w-[52%] lg:w-[46%] order-2 md:order-1'>
                     <ul>

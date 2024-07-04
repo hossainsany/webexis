@@ -12,3 +12,4 @@ export { default as Footer } from './Footer';
 export { default as BurgerMenu } from './BurgerMenu';
 export { default as Cards } from './Cards';
 export { default as ComingSoon } from './ComingSoon';
+export { default as FormStatus } from './FormStatus';

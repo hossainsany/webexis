@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const CookiePolicy = () => {
     return (
-        <section className='bg-lightBg py-24'>
+        <section className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-24'>
             <div className='container mx-auto'>
                 <h1 className='text-2xl font-semibold pb-2'>COOKIE POLICY</h1>
                 <p className='text-lg font-medium pb-8'>Last updated October 08, 2023</p>

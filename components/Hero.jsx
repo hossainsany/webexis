@@ -4,13 +4,13 @@ import Link from 'next/link';
 const Hero = () => {
     return (
         <section
-            className='bg-lightBg pt-0 pb-24 md:py-24'
             id='hero'
             style={{ background: 'url("/hero-bg.png")', backgroundSize: 'cover' }}
+            className='relative bg-lightBg dark:bg-darkBg text-secondary dark:text-primary pt-0 pb-24 md:py-24 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[""] before:dark:bg-darkBg before:z-[-1]'
         >
             <div className='container flex flex-col md:flex-row justify-center items-center mx-auto '>
                 <div className=' md:flex-2 lg:flex-1 order-2 md:order-1 px-4'>
-                    <h1 className='text-3xl md:text-4xl font-bold md:leading-[44px] pb-7 text-secondary'>
+                    <h1 className='text-3xl md:text-4xl font-bold md:leading-[44px] pb-7 text-secondary dark:text-primary'>
                         Webexis:{' '}
                         <span
                             className='text-transparent bg-clip-text bg-gradient-to-br from-[#273958] to-[#3767b5]'
@@ -29,7 +29,7 @@ const Hero = () => {
                         achieve measurable results that exceed expectations. Ready to elevate your
                         business?
                     </p>
-                    <Link href='/about' className='btn bg-darkBg text-primary '>
+                    <Link href='/about' className='btn bg-darkBg dark:bg-darkBg text-primary '>
                         Learn More
                     </Link>
                 </div>

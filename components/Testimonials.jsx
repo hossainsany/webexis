@@ -26,20 +26,18 @@ const Testimonials = () => {
     };
 
     return (
-        <section className='py-24 bg-lightBg-alt overflow-hidden'>
+        <section className='py-24 bg-lightBg dark:bg-darkBg text-secondary dark:text-primary overflow-hidden'>
             <div className='container mx-auto px-2 md:px-0'>
                 <div className='pb-24'>
                     <h2 className='text-2xl font-semibold text-center'>
                         What Our Clients Say About Webexis
                     </h2>
-                    <p className='text-center'>
-                        Testimonials Highlighting the Excellence of Webexis
-                    </p>
+                    <p className='text-center'>Client Experiences with Webexis</p>
                 </div>
                 <div className=' overflox-auto relative'>
                     <div className='absolute bottom-[-50px] left-[50%] translate-x-[-50%] flex justify-center items-center'>
                         <button
-                            className='px-1 h-[30px] w-[30px] bg-accent/[0.2] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
+                            className='px-1 h-[30px] w-[30px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
                             onClick={handlePrev}
                         >
                             <Image
@@ -50,7 +48,7 @@ const Testimonials = () => {
                             />
                         </button>
                         <button
-                            className='px-1 h-[30px] w-[30px] bg-accent/[0.2] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
+                            className='px-1 h-[30px] w-[30px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
                             onClick={handleNext}
                         >
                             <Image

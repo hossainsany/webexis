@@ -18,7 +18,7 @@ const NavLinks = ({ clicked, onSetClick }) => {
 
     return (
         <ul
-            className={`absolute flex top-[64px] left-0 py-4 md:py-0 flex-col text-center md:text-left w-full bg-[#f6f6f6] border-t-2 border-accent/70 md:border-none mx-auto md:static md:flex-row md:justify-end md:items-end ${
+            className={`absolute flex top-[64px] left-0 py-4 md:py-0 flex-col text-center md:text-left w-full bg-[#f6f6f6] dark:bg-[#292F39] border-t-2 border-accent/70 md:border-none mx-auto md:static md:flex-row md:justify-end md:items-end ${
                 clicked ? 'flex' : 'hidden'
             } md:flex z-10`}
         >

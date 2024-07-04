@@ -34,17 +34,20 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
 
     return (
         <div
-            className='w-full md:w-[600px] bg-lightBg p-4 md:p-6 mr-6 rounded hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'
+            className='w-full md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 mr-6 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'
             ref={cardRef}
         >
-            <div className='flex justify-between items-center pb-8'>
-                <div className='stars flex items-center justify-start'>{generateStars()}</div>
-                <div className='date'>{date}</div>
+            <div className=''>
+                <div className='flex justify-between items-center pb-8'>
+                    <div className='stars flex items-center justify-start'>{generateStars()}</div>
+                    <div className='text-sm md:text-base date'>{date}</div>
+                </div>
+                <div className='pb-6'>
+                    <h3 className='text-lg font-medium mb-2'>{title}</h3>
+                    <p className='text-sm md:text-base mb-2'> {desc}</p>
+                </div>
             </div>
-            <div className='pb-6'>
-                <h3 className='text-lg font-medium mb-2'>{title}</h3>
-                <p className='text-sm md:text-base mb-2'> {desc}</p>
-            </div>
+
             <div className='flex justify-between items-center'>
                 <div className='flex items-center'>
                     <div className='img min-w-[50px]'>
@@ -59,11 +62,11 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
 
                     <div className=''>
                         <h4 className='text-base font-medium leading-6'>{author}</h4>
-                        <p className='text-sm md:text-base leading-3'>{position}</p>
+                        <p className='text-xs md:text-base leading-3'>{position}</p>
                     </div>
                 </div>
                 <div className='flex justify-end items-center'>
-                    <Link href={url} className='text-sm md:text-base hover:underline'>
+                    <Link href={url} className='text-xs md:text-base hover:underline' tabIndex={-1}>
                         View on Trustpilot
                     </Link>
                     <div className='ml-1 md:ml-2'>

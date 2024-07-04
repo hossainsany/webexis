@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
+import { useState } from 'react';
 
 const footerLinks = [
     {
@@ -44,6 +44,12 @@ const icons = [
         alt: 'linkedin logo icon',
         link: 'https://www.linkedin.com/company/webexis',
     },
+
+    {
+        Icon: Instagram,
+        alt: 'instagram logo icon',
+        link: 'https://www.instagram.com/webexis_/',
+    },
     {
         Icon: Facebook,
         alt: 'facebook logo icon',
@@ -54,20 +60,18 @@ const icons = [
         alt: 'twitter logo icon',
         link: 'https://twitter.com/WebExis_',
     },
-    {
-        Icon: Instagram,
-        alt: 'instagram logo icon',
-        link: 'https://www.instagram.com/webexis_/',
-    },
 ];
 
 const Footer = () => {
+    const [newsletterInput, setnewsletterInput] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        setnewsletterInput('');
     };
 
     return (
-        <footer className='bg-lightBg-alt py-5 flex flex-col px-5 md:py-5 md:px-0 lg:px-4 xl:px-0 text-secondary'>
+        <footer className='bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary py-5 flex flex-col px-5 md:py-5 md:px-0 lg:px-4 xl:px-0'>
             <div className='container mx-auto'>
                 {/* socials cta  */}
                 <div className='flex flex-col justify-start items-start md:flex-row md:justify-between md:items-center py-10 border-b-[1px] border-accent/[0.3]'>
@@ -80,12 +84,12 @@ const Footer = () => {
                                 href={link}
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='group h-[45px] w-[45px] bg-dark-white/[0.8] opacity-[85%] flex justify-center items-center rounded-full mr-3 md:mr-0 md:ml-3 bg-lightBg hover:bg-accent transition-colors ease-in-out duration-300 '
+                                className='group h-[45px] w-[45px] bg-dark-white/[0.8] opacity-[85%] flex justify-center items-center rounded-full mr-3 md:mr-0 md:ml-3 bg-lightBg dark:bg-darkBg hover:bg-accent transition-colors ease-in-out duration-300 '
                                 key={link}
                             >
                                 <Icon
                                     aria-label={alt}
-                                    className='fill-secondary h-[30px] w-[30px] group-hover:fill-primary transition-colors ease-in-out duration-100 '
+                                    className='fill-secondary dark:fill-primary h-[30px] w-[30px] group-hover:fill-primary transition-colors ease-in-out duration-100 '
                                 />
                             </a>
                         ))}
@@ -100,16 +104,18 @@ const Footer = () => {
                         </h3>
                         <form
                             onSubmit={handleSubmit}
-                            className='flex justify-center items-center w-full md:flex-wrap md:block'
+                            className='flex justify-center items-center w-full md:flex-wrap md:block '
                         >
                             <input
                                 type='text'
                                 placeholder='Your Email'
-                                className='py-[10px] max-h-[100px] w-full px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] text-black bg-lightBg border-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:box-border '
+                                value={newsletterInput}
+                                onChange={(e) => setnewsletterInput(e.target.value)}
+                                className='py-[10px] max-h-[100px] w-full px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
                             />
                             <button
                                 type='submit'
-                                className='btn bg-darkBg text-primary border-2  rounded-tl-none rounded-bl-none'
+                                className='btn bg-darkBg text-primary rounded-tl-none rounded-bl-none dark:border-l-[0px]'
                             >
                                 Submit
                             </button>

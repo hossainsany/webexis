@@ -4,11 +4,11 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <Services />
-            <CTA />
-            <Portfolio />
             <USP />
+            <Services />
+            <Portfolio />
             <Testimonials />
+            <CTA />
             <Contact />
         </>
     );

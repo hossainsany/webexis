@@ -8,11 +8,11 @@ const BurgerMenu = ({ clicked, onSetClicked }) => {
     };
 
     return (
-        <div onClick={handleClick} className='cursor-pointer md:hidden'>
+        <div onClick={handleClick} className='cursor-pointer min-w-[30px] md:hidden'>
             {clicked ? (
-                <XIcon className='w-[25px] h-[25px] fill-secondary' />
+                <XIcon className='w-[25px] h-[25px] fill-secondary dark:fill-primary' />
             ) : (
-                <BurgerIcon className='w-[30px] h-[30px] fill-secondary' />
+                <BurgerIcon className='w-[30px] h-[30px] fill-secondary dark:fill-primary' />
             )}
         </div>
     );

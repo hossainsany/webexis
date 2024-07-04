@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'selector',
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,7 +10,8 @@ module.exports = {
         colors: {
             primary: '#ffffff', //dark blue, ligth text
             secondary: '#20252E', //dark blue, dark text
-            accent: '#3767b5', //light blue
+            tertiary: '#292F39', //light blue
+            accent: '#3767b5', //accent blue
 
             lightBg: '#ffffff',
             'lightBg-alt': '#f0f0f0',
@@ -19,7 +21,7 @@ module.exports = {
             white: '#ffffff',
         },
         fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
+            poppins: ['var(--font-poppins)'],
         },
         extend: {
             backgroundImage: {
