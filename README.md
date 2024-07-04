@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="./public/logo.png" alt="Webexis Logo" width="200" height="auto">
 
-## Getting Started
+# Welcome to Webexis
 
-First, run the development server:
+Webexis is your go-to web design and development agency, specializing in creating beautiful, functional, and responsive websites for both local businesses and international clients. Our team combines creativity with cutting-edge technology to deliver websites that not only look great but also perform exceptionally well.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About Webexis
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+At Webexis, we believe in the power of the web to transform businesses. Whether you're a small local business or a large international brand, we have the expertise to help you establish a strong online presence. Our unique selling points are our attention to detail and our fast turnaround time, ensuring that your website is both high-quality and delivered on schedule.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Our Services
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   **Web Design:** Stunning, user-friendly designs that reflect your brand.
+-   **Web Development:** Robust and scalable websites using the latest technologies.
+-   **Responsive Design:** Ensuring your site looks great on all devices.
+-   **SEO Optimization:** Enhancing your website's visibility on search engines.
+-   **Content Management Systems:** Easy-to-use systems for managing your website content.
 
-## Learn More
+## Why Choose Us?
 
-To learn more about Next.js, take a look at the following resources:
+-   **Expertise:** Over 4 years of experience in web design and development.
+-   **Quality:** High standards in both design and functionality.
+-   **Speed:** Fast turnaround times without compromising on quality.
+-   **Customer Satisfaction:** Our clients' happiness is our top priority.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Get in Touch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We'd love to hear from you! Whether you have a project in mind or just want to learn more about what we do, feel free to reach out.
 
-## Deploy on Vercel
+-   **Email:** [contact@hossainsany.com](mailto:info@webexis.net)
+-   **Instagram:** [instagram.com/webexis\_](https://www.instagram.com/webexis_/)
+-   **LinkedIn:** [linkedin.com/company/webexis](https://www.linkedin.com/company/webexis)
+-   **Facebook:** [facebook.com/webexis.net](https://www.facebook.com/webexis.net)
+-   **Website:** [hossainsany.com](https://webexis.net)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Thank you for visiting Webexis. We look forward to working with you!
