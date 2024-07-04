@@ -27,10 +27,10 @@ At Webexis, we believe in the power of the web to transform businesses. Whether 
 
 We'd love to hear from you! Whether you have a project in mind or just want to learn more about what we do, feel free to reach out.
 
--   **Email:** [contact@hossainsany.com](mailto:info@webexis.net)
+-   **Email:** [info@webexis.net](mailto:info@webexis.net)
 -   **Instagram:** [instagram.com/webexis\_](https://www.instagram.com/webexis_/)
 -   **LinkedIn:** [linkedin.com/company/webexis](https://www.linkedin.com/company/webexis)
 -   **Facebook:** [facebook.com/webexis.net](https://www.facebook.com/webexis.net)
--   **Website:** [hossainsany.com](https://webexis.net)
+-   **Website:** [webexis.net](https://webexis.net)
 
 ## Thank you for visiting Webexis. We look forward to working with you!
