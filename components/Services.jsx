@@ -22,6 +22,7 @@ const Services = () => {
                                 title={card.title}
                                 desc={card.desc}
                                 img={card.img}
+                                imgAlt={card.imgAlt}
                                 key={card.title}
                             />
                         ))}

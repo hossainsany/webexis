@@ -25,15 +25,15 @@ export default function RootLayout({ children }) {
                 ></Script>
                 <Script id='google-analytics'>
                     {`  window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
 
-                gtag('config', 'G-3GCZVVD910');`}
+                        gtag('config', 'G-3GCZVVD910');`}
                 </Script>
             </head>
             <body className='font-poppins selection:bg-accent'>
                 <Navbar />
-                {children}
+                <main>{children}</main>
                 <Footer />
             </body>
         </html>

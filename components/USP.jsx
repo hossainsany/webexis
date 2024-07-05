@@ -42,13 +42,13 @@ const USP = () => {
                         {items.map((item) => (
                             <li key={item.id} className='text-lg pb-4'>
                                 <div className='flex items-start'>
-                                    <h4 className='inline-block'>
+                                    <h3 className='inline-block'>
                                         <span className='inline-block h-[10px] w-[10px] bg-accent rounded-full mr-2'></span>
                                         <span className='text-lg font-semibold mr-2'>
                                             {item.title}
                                         </span>
                                         {item.body}
-                                    </h4>
+                                    </h3>
                                 </div>
                             </li>
                         ))}

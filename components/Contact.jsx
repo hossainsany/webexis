@@ -89,7 +89,10 @@ const Contact = () => {
                         placeholder='Your Message'
                         className='w-[350px] md:[400px] lg:w-[500px] py-2 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
                     />
-                    <button className='btn w-[350px] md:[400px] lg:w-[500px] bg-darkBg-alt text-primary'>
+                    <button
+                        className='btn w-[350px] md:[400px] lg:w-[500px] bg-darkBg-alt text-primary'
+                        disabled={loading}
+                    >
                         {loading ? (
                             <Spinner className='h-[24px] w-[25px] fill-primary animate-spin mx-auto' />
                         ) : (

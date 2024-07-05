@@ -53,7 +53,7 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
                     <div className='img min-w-[50px]'>
                         <Image
                             src={img}
-                            alt='avatar icon'
+                            alt={`picture of ${author} a ${position}`}
                             height={40}
                             width={40}
                             className='rounded-full'
