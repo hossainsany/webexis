@@ -27,8 +27,8 @@ const NavLinks = ({ clicked, onSetClick }) => {
                     <Link
                         href={link.url}
                         onClick={handleClick}
-                        className={`inline-block font-medium ml-0 md:ml-5 mb-5 mt-4 md:mt-0 md:mb-0 hover:text-accent transition-all ${
-                            pathname === `${link.url}` ? 'text-accent ' : ''
+                        className={`inline-block text-base font-medium ml-0 md:ml-5 mb-5 mt-4 md:mt-0 md:mb-0 hover:text-accent transition-all ${
+                            pathname === `${link.url}` ? 'text-accent' : ''
                         }`}
                     >
                         {link.text}

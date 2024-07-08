@@ -1,7 +1,11 @@
-import { ComingSoon } from '@/components';
+import { ComingSoon, Contact } from '@/components';
+
+export const metadata = {
+    title: 'Contact Us',
+};
 
 const page = () => {
-    return <ComingSoon page={'Contact'} />;
+    return <Contact />;
 };
 
 export default page;

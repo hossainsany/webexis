@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Cards = ({ title, desc, img, imgAlt }) => {
     return (
-        <div className='card bg-lightBg-alt dark:bg-tertiary p-4 lg:p-10 rounded-lg mb-10 w-full md:w-[32%] lg:w-[30%] hover:shadow-lg transition-all hover:transition-all hover:duration-300'>
+        <div className='card bg-lightBg-alt dark:bg-tertiary p-4 lg:p-10 rounded-lg mb-10 w-full md:w-[32%] lg:w-[30%] hover:shadow-lg transition-all duration-300'>
             <div className='img'>
                 <Image src={img} alt={imgAlt} height={640} width={640} />
             </div>

@@ -33,7 +33,7 @@ const footerLinks = [
             { text: 'Terms of Service', link: '/tos' },
             { text: 'Cookie Policy', link: '/cookie-policy' },
             { text: 'Refund Policy', link: '/refund-policy' },
-            { text: 'Attributions', link: '/attributions' },
+            { text: 'Privacy Policy', link: '/privacy-policy' },
         ],
     },
 ];

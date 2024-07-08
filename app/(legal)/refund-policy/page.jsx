@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+export const metadata = {
+    title: 'Refund Policy',
+};
+
 const ReturnPolicy = () => {
     return (
         <section className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-24 '>

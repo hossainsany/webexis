@@ -39,17 +39,6 @@ const serviceCards = [
 
 const reviews = [
     {
-        id: 19,
-        title: 'Made My Restaurant Website Shine',
-        desc: "Webexis designed a stunning website for our restaurant that showcases our food and made it easy for customers to order. But it wasn't just looks - their marketing magic brought in new customers. Great communication, industry knowledge, and measurable results - highly recommend!",
-        img: '/avatar-male.png',
-        author: 'Maikel Ab',
-        position: 'Restaurant Owner',
-        url: 'https://trstp.lt/CvjmSPapy',
-        date: 'June 28, 2024',
-        stars: 5,
-    },
-    {
         id: 40,
         title: 'Web Management Bliss: Thanks to WebExis',
         desc: "Managing a website shouldn't feel like rocket science. Webexis gets it. They built me a personal website that's a joy to manage. It's streamlined and user-friendly, making updates and content creation a breeze.  Highly recommend them!",
@@ -60,6 +49,29 @@ const reviews = [
         date: 'Oct 15, 2023',
         stars: 5,
     },
+
+    {
+        id: 58,
+        title: 'Webex did a great job...',
+        desc: 'Webex did a great job building my Shopify website! Easy to use and turned out just how I wanted.',
+        img: '/avatar-male.png',
+        author: 'Marvin Greene',
+        position: 'Restaurant Owner',
+        url: 'https://www.trustpilot.com/review/webexis.net',
+        date: 'Jan 20, 2024',
+        stars: 5,
+    },
+    // {
+    //     id: 58,
+    //     title: "My Experience with Webexis's Digital Marketing Services",
+    //     desc: 'I recently partnered with Webexis to launch Google and Instagram ad campaigns for my local business.  Their expertise helped us reach a wider audience and significantly boost our customer base.  The return on investment has been fantastic! I highly recommend Webexis to any local business looking to expand their reach through digital marketing.',
+    //     img: '/avatar-male.png',
+    //     author: 'Marvin Greene',
+    //     position: 'Restaurant Owner',
+    //     url: 'https://www.trustpilot.com/review/webexis.net',
+    //     date: 'Jan 20, 2024',
+    //     stars: 5,
+    // },
     {
         id: 30,
         title: 'Solid Choice for Dropshipping Stores',
@@ -72,14 +84,14 @@ const reviews = [
         stars: 4,
     },
     {
-        id: 58,
-        title: "My Experience with Webexis's Digital Marketing Services",
-        desc: 'I recently partnered with Webexis to launch Google and Instagram ad campaigns for my local business.  Their expertise helped us reach a wider audience and significantly boost our customer base.  The return on investment has been fantastic! I highly recommend Webexis to any local business looking to expand their reach through digital marketing.',
+        id: 19,
+        title: 'Made My Restaurant Website Shine',
+        desc: "Webexis designed a stunning website for our restaurant that showcases our food and made it easy for customers to order. But it wasn't just looks - their marketing magic brought in new customers. Great communication, industry knowledge, and measurable results - highly recommend!",
         img: '/avatar-male.png',
-        author: 'Marvin Greene',
+        author: 'Maikel Ab',
         position: 'Restaurant Owner',
         url: 'https://www.trustpilot.com/review/webexis.net',
-        date: 'Jan 20, 2024',
+        date: 'June 28, 2024',
         stars: 5,
     },
 ];
