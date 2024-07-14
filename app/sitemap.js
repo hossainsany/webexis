@@ -9,6 +9,10 @@ export default async function sitemap() {
             lastModified: new Date(),
         },
         {
+            url: 'https://webexis.net/case-studies',
+            lastModified: new Date(),
+        },
+        {
             url: 'https://webexis.net/services',
             lastModified: new Date(),
         },

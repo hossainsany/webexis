@@ -7,7 +7,8 @@ const navPaths = [
     { url: '/', text: 'Home', id: 1 },
     { url: '/about', text: 'About', id: 2 },
     { url: '/services', text: 'Services', id: 3 },
-    { url: '/contact', text: 'Contact', id: 4 },
+    { url: '/case-studies', text: 'Portfolio', id: 4 },
+    { url: '/contact', text: 'Contact', id: 5 },
 ];
 
 const NavLinks = ({ clicked, onSetClick }) => {

@@ -1,4 +1,5 @@
 'use client';
+import { Quote } from '@/assets/svg';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,14 +35,22 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
 
     return (
         <div
-            className='w-full md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 mr-6 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'
+            className='w-[350px] md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'
             ref={cardRef}
         >
             <div className=''>
-                <div className='flex justify-between items-center pb-8'>
-                    <div className='stars flex items-center justify-start'>{generateStars()}</div>
-                    <div className='text-sm md:text-base date'>{date}</div>
-                </div>
+                {stars ? (
+                    <div className='flex justify-between items-center pb-8'>
+                        <div className='stars flex items-center justify-start'>
+                            {generateStars()}
+                        </div>
+                        <div className='text-sm md:text-base date'>{date}</div>
+                    </div>
+                ) : (
+                    <div className=' pb-4'>
+                        <Quote className='h-[70px] fill-accent opacity-65' />
+                    </div>
+                )}
                 <div className='pb-6'>
                     <h3 className='text-lg font-medium mb-2'>{title}</h3>
                     <p className='text-sm md:text-base mb-2'> {desc}</p>
@@ -65,7 +74,7 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
                         <p className='text-xs md:text-base leading-3'>{position}</p>
                     </div>
                 </div>
-                <div className='flex justify-end items-center'>
+                <div className='flex justify-end items-center min-w-[132px]'>
                     <Link href={url} className='text-xs md:text-base hover:underline' tabIndex={-1}>
                         View on Trustpilot
                     </Link>

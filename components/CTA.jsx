@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import React from 'react';
 
-const CTA = () => {
+const CTA = ({ borders }) => {
+    const borderStyle = borders ? 'border-y-2 border-accent/[30%]' : '';
+
     return (
         <section
-            className='relative py-16 lg:py-24 bg-lightBg text-secondary dark:text-primary before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[""] before:dark:bg-darkBg-alt before:bg-lightBg-alt before:z-[-1]'
+            className={`relative py-16 lg:py-24 bg-lightBg text-secondary dark:text-primary before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[""] before:dark:bg-darkBg-alt before:bg-lightBg-alt before:z-[-1] ${borderStyle}`}
             style={{ background: 'url("/cta-bg.png")', backgroundSize: 'cover' }}
         >
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-0 text-start '>
