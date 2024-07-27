@@ -1,10 +1,9 @@
+'use client';
+
 import caseStudiesData from '@/constants/case-study';
 import Image from 'next/image';
-import CaseStudyContent from './CaseStudyContent';
-import CaseStudyText from './CaseStudyText';
 import { useEffect, useState } from 'react';
-import { Review } from '.';
-import NotFound from './NotFound';
+import { Review, CaseStudyContent, CaseStudyText, NotFound } from '.';
 
 const CaseStudy = ({ slug }) => {
     const [currentStudy, setCurrentStudy] = useState([]);
@@ -12,8 +11,6 @@ const CaseStudy = ({ slug }) => {
     useEffect(() => {
         setCurrentStudy(caseStudiesData.find((item) => item.caseStudy.slug === slug)?.caseStudy);
     }, []);
-
-    console.log(currentStudy);
 
     return (
         <>
@@ -70,7 +67,6 @@ const CaseStudy = ({ slug }) => {
                                         author={currentStudy.clientTestimonial.author}
                                         position={currentStudy.clientTestimonial.position}
                                         url={currentStudy.clientTestimonial.url}
-                                        tailwind={'flex-1'}
                                     />
                                 </div>
 

@@ -10,9 +10,40 @@
 
 @layer components {
     .btn {
-        @apply inline-block py-2.5 px-8 rounded hover:bg-accent hover:transition-all dark:border-2 dark:border-accent/50;
+        @apply inline-block py-2.5 px-8 rounded hover:bg-accent hover:transition-all dark:border-2 dark:border-accent;
     }
     .grad {
         @apply bg-gradient-to-br from-[#273958] to-[#3767b5];
     }
+}
+.backgroung-transparent {
+    background-color: 'transparent';
+}
+
+.radial-gradient {
+    background: #20252e;
+}
+.linear-gradient {
+    mask-image: linear-gradient(
+        -75deg,
+        white calc(var(--x) + 20%),
+        transparent calc(var(--x) + 25%),
+        white calc(var(--x) + 100%)
+    );
+    -webkit-mask-image: linear-gradient(
+        -75deg,
+        white calc(var(--x) + 20%),
+        transparent calc(var(--x) + 25%),
+        white calc(var(--x) + 100%)
+    );
+}
+.linear-overlay {
+    background-image: linear-gradient(
+        -75deg,
+        rgba(67, 100, 228, 0.6) calc(var(--x) + 100%),
+        rgba(67, 100, 228, 0) calc(var(--x) + 25%),
+        rgba(67, 100, 228, 0) calc(var(--x) + 20%)
+    );
+    mask: linear-gradient(black, black) content-box;
+    mask: linear-gradient(black, black);
 }

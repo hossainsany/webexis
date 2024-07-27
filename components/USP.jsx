@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import { motion } from 'framer-motion';
 
 const USP = () => {
     const items = [
@@ -35,22 +37,35 @@ const USP = () => {
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-0'>
                 <div className='text md:w-[52%] lg:w-[46%] order-2 md:order-1'>
                     <ul>
-                        <h2 className='text-2xl font-semibold pb-4'>
+                        <motion.h2
+                            initial={{ y: 50, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
+                            className='text-2xl font-semibold pb-4'
+                        >
                             Why Choose <span className='text-accent '>Webexis</span> for Your
                             Service Business Website Design?
-                        </h2>
-                        {items.map((item) => (
-                            <li key={item.id} className='text-lg pb-4'>
-                                <div className='flex items-start'>
+                        </motion.h2>
+                        {items.map((item, i) => (
+                            <motion.li
+                                initial={{ y: 50, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, ease: 'easeInOut', delay: i * 0.1 }}
+                                key={item.id}
+                                className='text-lg pb-4'
+                            >
+                                <div className='flex items-start shrink-0'>
+                                    <span className='shrink-0 mt-[8px] block h-[10px] w-[10px] bg-accent rounded-full mr-3'></span>
                                     <h3 className='inline-block'>
-                                        <span className='inline-block h-[10px] w-[10px] bg-accent rounded-full mr-2'></span>
                                         <span className='text-lg font-semibold mr-2'>
                                             {item.title}
                                         </span>
                                         {item.body}
                                     </h3>
                                 </div>
-                            </li>
+                            </motion.li>
                         ))}
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import CaseStudy from '@/components/CaseStudy';
+import { CaseStudy } from '@/components';
 
 const ProjectPage = ({ params }) => {
     const slug = params.project;

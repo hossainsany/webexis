@@ -2,37 +2,22 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 
-const navPaths = [
-    { url: '/', text: 'Home', id: 1 },
-    { url: '/about', text: 'About', id: 2 },
-    { url: '/services', text: 'Services', id: 3 },
-    { url: '/case-studies', text: 'Portfolio', id: 4 },
-    { url: '/contact', text: 'Contact', id: 5 },
-];
-
-const NavLinks = ({ clicked, onSetClick }) => {
+const NavLinks = ({ navPaths }) => {
     const pathname = usePathname();
-    const handleClick = () => {
-        onSetClick((c) => !c);
-    };
 
     return (
-        <ul
-            className={`absolute flex top-[64px] left-0 py-4 md:py-0 flex-col text-center md:text-left w-full bg-[#f6f6f6] dark:bg-[#292F39] border-t-2 border-accent/70 md:border-none mx-auto md:static md:flex-row md:justify-end md:items-end ${
-                clicked ? 'flex' : 'hidden'
-            } md:flex z-10`}
-        >
-            {navPaths.map((link) => (
-                <li key={link.id}>
+        <ul className='flex items-center justify-end w-full'>
+            {navPaths.map((path) => (
+                <li key={path.id} className='mr-4'>
                     <Link
-                        href={link.url}
-                        onClick={handleClick}
-                        className={`inline-block text-base font-medium ml-0 md:ml-5 mb-5 mt-4 md:mt-0 md:mb-0 hover:text-accent transition-all ${
-                            pathname === `${link.url}` ? 'text-accent' : ''
+                        href={path.url}
+                        className={`font-medium hover:text-accent transition-colors ${
+                            pathname === path.url ? 'text-accent' : ''
                         }`}
                     >
-                        {link.text}
+                        {path.text}
                     </Link>
                 </li>
             ))}

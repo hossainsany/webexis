@@ -11,6 +11,7 @@ module.exports = {
             primary: '#ffffff', //dark blue, ligth text
             secondary: '#20252E', //dark blue, dark text
             tertiary: '#292F39', //light blue
+            'light-tertiary': '#f7f7f7', //light blue
             accent: '#3767b5', //accent blue
 
             lightBg: '#ffffff',

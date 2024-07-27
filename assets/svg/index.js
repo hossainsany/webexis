@@ -8,4 +8,5 @@ export { default as Sun } from './Sun.svg';
 export { default as Moon } from './Moon.svg';
 export { default as Spinner } from './Spinner.svg';
 export { default as AngleRight } from './AngleRight.svg';
+export { default as AngleLeft } from './AngleLeft.svg';
 export { default as Quote } from './Quote.svg';

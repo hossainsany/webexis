@@ -1,31 +1,77 @@
-import { CTA } from '@/components';
-import ProjectCard from '@/components/ProjectCard';
+'use client';
+
+import { AnimatePresence, motion } from 'framer-motion';
+import { CTA, Filter, PageHero, ProjectCard } from '@/components';
 import caseStudiesData from '@/constants/case-study';
+import { useState } from 'react';
 
 const PortfolioPage = () => {
+    const [projects, setProjects] = useState(caseStudiesData);
+    const [industry, setIndustry] = useState('all');
+    const [techStack, setTechStack] = useState('all');
+    console.log(industry, techStack, projects);
+
+    const handleFilter = (e) => {
+        e.preventDefault();
+
+        const filterded = caseStudiesData.filter(({ caseStudy }) => {
+            const industryMatch =
+                industry === 'all' ||
+                caseStudy.tags.some((tag) =>
+                    tag.name.toLowerCase().includes(industry.toLowerCase())
+                );
+            const techStackMatch =
+                techStack === 'all' ||
+                caseStudy.tags.some((tag) =>
+                    tag.name.toLowerCase().includes(techStack.toLowerCase())
+                );
+
+            return industryMatch && techStackMatch;
+        });
+        setProjects(filterded);
+    };
+
+    const headingText =
+        "Explore how we've transformed businesses with our expert web solutions. From boosting sales for restaurants and digital marketers to crafting WordPress plugin pages and roofing company sites, we deliver proven success.";
+    const headingTextShort =
+        "Explore how we've transformed businesses with our expert web solutions.";
+    const headingImg = '/portfolio-hero.png';
     return (
-        <main className='bg-lightBg dark:bg-darkBg dark:text-primary '>
-            <div className=' '>
-                <section className=' py-24 '>
-                    <div className='container mx-auto px-4 md:px-0'>
-                        <div className='text-center mb-24'>
-                            <h1 className='text-2xl font-semibold'>Webexis Portfolio</h1>
-                            <p className='text-base'>Our Showcase of Success</p>
-                        </div>
-                        <div className='flex flex-wrap justify-between'>
-                            {caseStudiesData.map((singleStudy) => (
+        <>
+            <PageHero
+                headingTitle={'WebExis Case Studies'}
+                headingSubtitle={'Our Showcase of Success'}
+                headingText={headingText}
+                headingTextShort={headingTextShort}
+                headingImg={headingImg}
+            />
+            <Filter
+                industry={industry}
+                setIndustry={setIndustry}
+                techStack={techStack}
+                setTechStack={setTechStack}
+                handleFilter={handleFilter}
+            />
+            <div className='pt-14 pb-24 bg-lightBg-alt dark:bg-darkBg-alt dark:text-primary'>
+                <div className='container mx-auto px-4 md:px-0'>
+                    <div layout className='flex flex-wrap justify-between'>
+                        {projects.length < 1 ? (
+                            <p className='text-center text-2xl font-semibold w-full'>
+                                No Results Found, Try Something Different.
+                            </p>
+                        ) : (
+                            projects.map((singleStudy) => (
                                 <ProjectCard
                                     caseStudy={singleStudy.caseStudy}
                                     key={singleStudy.caseStudy.id}
-                                    tailwindClass={'bg-lightBg-alt dark:bg-darkBg-alt'}
                                 />
-                            ))}
-                        </div>
+                            ))
+                        )}
                     </div>
-                </section>
-                <CTA borders={true} />
+                </div>
             </div>
-        </main>
+            <CTA bgAlt={true} />
+        </>
     );
 };
 

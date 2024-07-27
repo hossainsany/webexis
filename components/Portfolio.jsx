@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import ProjectCard from './ProjectCard';
 import caseStudiesData from '@/constants/case-study';
 import { AngleRight } from '@/assets/svg';
+import { ProjectCard } from '.';
 
 const Portfolio = () => {
     const shortProjects = caseStudiesData.slice(0, 3);
@@ -21,8 +21,8 @@ const Portfolio = () => {
                     <AngleRight className='w-[10px] ml-1 fill-accent group-hover:fill-secondary dark:group-hover:fill-primary transition-all' />
                 </Link>
                 <div className='flex flex-wrap justify-between'>
-                    {shortProjects.map((p) => (
-                        <ProjectCard key={p.caseStudy.id} caseStudy={p.caseStudy} />
+                    {shortProjects.map((p, i) => (
+                        <ProjectCard key={p.caseStudy.id} caseStudy={p.caseStudy} i={i} />
                     ))}
                 </div>
             </div>

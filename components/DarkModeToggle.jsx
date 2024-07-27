@@ -1,5 +1,8 @@
+'use client';
+
 import { Moon, Sun } from '@/assets/svg';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const DarkModeToggle = () => {
     const [isDark, setIsDark] = useState(false);
@@ -24,27 +27,21 @@ const DarkModeToggle = () => {
     }, [isDark]);
 
     return (
-        <button
-            className='relative ml-0 md:ml-5 mr-5 md:mr-0 min-w-[25px] inline-block group delay-150 duration-300 ease-in-out'
+        <motion.button
+            className='relative ml-0 md:ml-5 mr-5 md:mr-0 h-[27px] w-[27px] inline-block group delay-150 duration-300 ease-in-out'
             onClick={handleClick}
         >
-            <div className='absolute bg-accent text-primary p-1 text-xs w-[80px] bottom-[-45px] left-[-28px] opacity-0 group-hover:md:opacity-100 transition-all duration-150 ease-in-out delay-700'>
+            <div className='absolute bg-accent text-primary p-1 text-xs w-[80px] bottom-[-45px] right-[0] opacity-0 group-hover:md:opacity-100 transition-all duration-150 ease-in-out delay-700'>
                 {isDark ? <h2>Light Mode</h2> : <h2>Dark Mode</h2>}
             </div>
-            {isDark ? (
-                <Sun
-                    className={`w-[25px] h-[25px] md:w-[20px] md:h-[20px]  ${
-                        isDark ? 'fill-white' : 'fill-secondary'
-                    }`}
-                />
-            ) : (
-                <Moon
-                    className={`w-[25px] h-[25px] md:w-[22px] md:h-[22px] ${
-                        isDark ? 'fill-white' : 'fill-secondary'
-                    }`}
-                />
-            )}
-        </button>
+            <motion.div>
+                {isDark ? (
+                    <Sun className='absolute h-[25px] w-[25px] fill-secondary dark:fill-primary top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]' />
+                ) : (
+                    <Moon className='absolute h-[27px] w-[25px] fill-secondary dark:fill-primary top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]' />
+                )}
+            </motion.div>
+        </motion.button>
     );
 };
 

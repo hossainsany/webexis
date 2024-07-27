@@ -1,41 +1,79 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { easeInOut, motion } from 'framer-motion';
 import { reviews } from '@/constants/data';
 import { Review } from '@/components';
+import { AngleLeft, AngleRight } from '@/assets/svg';
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [isTransitioning, setIsTransitioning] = useState(false);
-    const totalItems = reviews.length;
-    const visibleItems = [...reviews.slice(-1), ...reviews, ...reviews.slice(0, 2)];
+    const [nextHandleTriggered, setNextHandleTriggered] = useState(false);
+    const [prevHandleTriggered, setPrevHandleTriggered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const currentReview = [...reviews.slice(-2), ...reviews, ...reviews.slice(0, 2)];
 
-    const handleNext = () => {
-        setIsTransitioning(true);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-    };
+    const mobileWidth = -370 * currentIndex;
+    const deskWidth = -620 * currentIndex;
 
-    const handlePrev = () => {
-        setIsTransitioning(true);
-        setCurrentIndex((prevIndex) => prevIndex - 1);
-    };
-
-    useEffect(() => {
-        if (currentIndex === 0) {
-            setTimeout(() => {
-                setIsTransitioning(false);
-                setCurrentIndex(totalItems);
-            }, 400);
-        } else if (currentIndex === totalItems + 1) {
+    const handleNext = async () => {
+        setPrevHandleTriggered(false);
+        setNextHandleTriggered(true);
+        if (currentIndex < reviews.length) {
+            setIsTransitioning(true);
+            setCurrentIndex((i) => i + 1);
+        } else {
             setTimeout(() => {
                 setIsTransitioning(false);
                 setCurrentIndex(1);
-            }, 400);
+            }, 300);
+        }
+    };
+    const handlePrev = () => {
+        setPrevHandleTriggered(true);
+        setNextHandleTriggered(false);
+
+        if (currentIndex <= 0) {
+            setTimeout(() => {
+                setIsTransitioning(true);
+                setCurrentIndex(reviews.length);
+            }, 300);
         } else {
             setIsTransitioning(true);
+            setCurrentIndex((i) => i - 1);
         }
-    }, [currentIndex, totalItems]);
+    };
+
+    useEffect(() => {
+        if (nextHandleTriggered && currentIndex === 5) {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setIsTransitioning(false);
+                setCurrentIndex(0);
+            }, 300);
+        }
+
+        if (prevHandleTriggered && currentIndex === 0) {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setIsTransitioning(false);
+                setCurrentIndex(5);
+            }, 300);
+        }
+    }, [currentIndex, nextHandleTriggered, prevHandleTriggered]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <section className='py-24 bg-lightBg dark:bg-darkBg text-secondary dark:text-primary overflow-hidden'>
@@ -47,42 +85,31 @@ const Testimonials = () => {
                     <p className='text-center'>Client Experiences with Webexis</p>
                 </div>
             </div>
-            <div className='overflox-auto relative w-[350px] md:w-[600px] mx-auto'>
-                <div className='absolute bottom-[-50px] left-[50%] translate-x-[-50%] flex justify-center items-center'>
+            <div className='overflox-auto relative  md:w-full mx-auto'>
+                <div className='absolute bottom-[-50px] left-[50%] translate-x-[-50%] translate-y-[50%] flex justify-center items-center'>
                     <button
-                        className='px-1 h-[30px] w-[30px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
                         onClick={handlePrev}
+                        className='px-1 h-[32px] w-[32px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
                     >
-                        <Image
-                            src='/left-arrow.png'
-                            alt='arrow icon pointing to left'
-                            height={10}
-                            width={10}
-                        />
+                        <AngleLeft className='h-[25px] w-[25px] fill-secondary dark:fill-primary' />
                     </button>
                     <button
-                        className='px-1 h-[30px] w-[30px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
                         onClick={handleNext}
+                        className='px-1 h-[32px] w-[32px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 transition-all '
                     >
-                        <Image
-                            src='/right-arrow.png'
-                            alt='arrow icon pointing to left'
-                            height={10}
-                            width={10}
-                        />
+                        <AngleRight className='h-[25px] w-[25px] fill-secondary dark:fill-primary' />
                     </button>
                 </div>
 
-                <div
-                    className={`grid grid-flow-col gap-[20px]`}
-                    style={{
-                        transform: `translateX(calc(-${currentIndex * 100}% - ${
-                            currentIndex === 0 ? '0px' : `${currentIndex * 20}px`
-                        }))`,
-                        transition: isTransitioning ? 'transform 400ms ease-in-out' : 'none',
+                <motion.div
+                    className={`grid grid-flow-col md:gap-5`}
+                    initial={{ translateX: 0 }}
+                    animate={{
+                        translateX: isMobile ? mobileWidth : deskWidth,
                     }}
+                    transition={{ duration: isTransitioning ? 0.3 : 0, ease: 'easeInOut' }}
                 >
-                    {visibleItems.map((review, i) => (
+                    {currentReview.map((review, i) => (
                         <Review
                             key={`${review.id}-${i}`}
                             title={review.title}
@@ -95,7 +122,7 @@ const Testimonials = () => {
                             stars={review.stars}
                         />
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

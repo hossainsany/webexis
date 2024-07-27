@@ -1,19 +1,19 @@
 'use client';
 
-import { serviceCards } from '@/constants/data';
-import Cards from './Cards';
 import { useEffect, useState } from 'react';
+import { serviceCards } from '@/constants/data';
+import { Cards } from '.';
 
 const Services = () => {
-    const [isMobile, setIsMobile] = useState(false);
     const [cards, setCards] = useState([]);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768);
         };
-        handleResize();
         window.addEventListener('resize', handleResize);
+        handleResize();
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -28,27 +28,25 @@ const Services = () => {
     }, [isMobile]);
 
     return (
-        <section className='bg-lightBg dark:bg-darkBg dark:text-primary py-24' id='services'>
-            <div className='container mx-auto px-4 md:px-0'>
+        <section
+            className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-24'
+            id='services'
+        >
+            <div className='container mx-auto px-2 2xl:px-0'>
                 <div className='section-title text-center pb-24'>
-                    <h2 className='text-2xl font-semibold '>
-                        Web Design Built for Businesses Like Yours
-                    </h2>
-                    <p className='text-base'>Specialized Web Design for Service Businesses </p>
+                    <h2 className='text-2xl font-semibold '>Comprehensive Web Solutions</h2>
+                    <p className='text-base'> Tailored Services for your Success</p>
                 </div>
                 <div className=''>
-                    {/* <p className='text-base md:text-lg font-medium'>
-                        We specialize in web design that empowers service businesses like yours.
-                    </p>
-                    <p className='text-base md:text-lg font-medium pb-6'>Our services include:</p> */}
-                    <div className='services flex flex-col md:flex-row justify-between flex-wrap '>
-                        {cards.map((card) => (
+                    <div className='services grid grid-cols-1 md:grid-cols-4 grid-rows-1 gap-4'>
+                        {cards.map((card, i) => (
                             <Cards
                                 title={card.title}
                                 desc={card.desc}
                                 img={card.img}
                                 imgAlt={card.imgAlt}
                                 key={card.title}
+                                index={i}
                             />
                         ))}
                     </div>

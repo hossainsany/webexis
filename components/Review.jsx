@@ -1,9 +1,10 @@
 'use client';
-import { Quote } from '@/assets/svg';
-import Image from 'next/image';
-import Link from 'next/link';
 
-const Review = ({ id, title, desc, img, author, position, stars, url, date, cardRef }) => {
+import Link from 'next/link';
+import Image from 'next/image';
+import { Quote } from '@/assets/svg';
+
+const Review = ({ title, desc, img, author, position, stars, url, date }) => {
     const generateStars = () => {
         let starArray = [];
         for (let i = 1; i <= 5; i++) {
@@ -34,10 +35,7 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
     };
 
     return (
-        <div
-            className='w-[350px] md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'
-            ref={cardRef}
-        >
+        <div className='w-[330px] md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 mr-[7px] ml-[13px] md:mx-0 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'>
             <div className=''>
                 {stars ? (
                     <div className='flex justify-between items-center pb-8'>
@@ -74,19 +72,25 @@ const Review = ({ id, title, desc, img, author, position, stars, url, date, card
                         <p className='text-xs md:text-base leading-3'>{position}</p>
                     </div>
                 </div>
-                <div className='flex justify-end items-center min-w-[132px]'>
-                    <Link href={url} className='text-xs md:text-base hover:underline' tabIndex={-1}>
-                        View on Trustpilot
-                    </Link>
-                    <div className='ml-1 md:ml-2'>
-                        <Image
-                            src='/trustpilot.png'
-                            alt='trust pilot logo'
-                            width={20}
-                            height={20}
-                        />
+                {stars && (
+                    <div className='flex justify-end items-center min-w-[132px]'>
+                        <Link
+                            href={url}
+                            className='text-xs md:text-base hover:underline'
+                            tabIndex={-1}
+                        >
+                            View on Trustpilot
+                        </Link>
+                        <div className='ml-1 md:ml-2'>
+                            <Image
+                                src='/trustpilot.png'
+                                alt='trust pilot logo'
+                                width={20}
+                                height={20}
+                            />
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );

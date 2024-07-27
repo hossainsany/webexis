@@ -1,9 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-
-import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
 import { useState } from 'react';
+import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
 
 const footerLinks = [
     {

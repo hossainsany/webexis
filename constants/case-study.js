@@ -11,6 +11,7 @@ const caseStudiesData = [
                 { name: 'Elementor', id: 1113 },
                 { name: 'Web Design', id: 1114 },
                 { name: 'Restaurant Website', id: 1115 },
+                { name: 'Restaurant', id: 11151 },
             ],
             shortDesc: [
                 {
@@ -146,13 +147,14 @@ const caseStudiesData = [
             title: 'Creating a Dynamic YouTube Frontend with React, SASS, RapidAPI, and YouTube V3 API',
             pageTitle: 'Restaurant Website Case Study | Webexis',
             slug: 'youtube-frontend-project-case-study',
-            id: 2111,
+            id: 6111,
             name: 'VOD',
             tags: [
                 { name: 'React', id: 2112 },
-                { name: 'SASS', id: 2113 },
+                { name: 'next', id: 2113 },
                 { name: 'YouTube API', id: 2114 },
                 { name: 'Web Development', id: 2115 },
+                { name: 'Roofing', id: 11151 },
             ],
             shortDesc: [
                 {
@@ -288,13 +290,14 @@ const caseStudiesData = [
             title: 'Creating a Dynamic YouTube Frontend with React, SASS, RapidAPI, and YouTube V3 API',
             pageTitle: 'Restaurant Website Case Study | Webexis',
             slug: 'youtube-frontend-project-case-study',
-            id: 2111,
-            name: 'VOD',
+            id: 3111,
+            name: 'WebExis',
             tags: [
-                { name: 'React', id: 2112 },
+                { name: 'wordpress', id: 2112 },
                 { name: 'SASS', id: 2113 },
                 { name: 'YouTube API', id: 2114 },
                 { name: 'Web Development', id: 2115 },
+                { name: 'marketing', id: 11151 },
             ],
             shortDesc: [
                 {
@@ -306,7 +309,7 @@ const caseStudiesData = [
                     id: 2117,
                 },
             ],
-            img: '/vod-thumbnail.jpg',
+            img: '/webexis-thumbnail.jpg',
             clientOverview: {
                 id: 2118,
                 title: 'Client Overview',
@@ -430,13 +433,15 @@ const caseStudiesData = [
             title: 'Creating a Dynamic YouTube Frontend with React, SASS, RapidAPI, and YouTube V3 API',
             pageTitle: 'Restaurant Website Case Study | Webexis',
             slug: 'youtube-frontend-project-case-study',
-            id: 2111,
-            name: 'VOD',
+            id: 4111,
+            name: 'Services',
             tags: [
-                { name: 'React', id: 2112 },
-                { name: 'SASS', id: 2113 },
+                { name: 'Next.js', id: 2112 },
+                { name: 'next', id: 2113 },
                 { name: 'YouTube API', id: 2114 },
                 { name: 'Web Development', id: 2115 },
+                { name: 'Restaurant', id: 11151 },
+                { name: 'Landing Page', id: 11152 },
             ],
             shortDesc: [
                 {
@@ -448,7 +453,7 @@ const caseStudiesData = [
                     id: 2117,
                 },
             ],
-            img: '/vod-thumbnail.jpg',
+            img: '/os-thumbnail.jpg',
             clientOverview: {
                 id: 2118,
                 title: 'Client Overview',
@@ -569,16 +574,18 @@ const caseStudiesData = [
     },
     {
         caseStudy: {
-            title: 'Creating a Dynamic YouTube Frontend with React, SASS, RapidAPI, and YouTube V3 API',
+            title: 'not actually cms',
             pageTitle: 'Restaurant Website Case Study | Webexis',
             slug: 'youtube-frontend-project-case-study',
-            id: 2111,
-            name: 'VOD',
+            id: 5111,
+            name: 'not actually cms',
             tags: [
-                { name: 'React', id: 2112 },
+                { name: 'custom cms', id: 2112 },
                 { name: 'SASS', id: 2113 },
                 { name: 'YouTube API', id: 2114 },
                 { name: 'Web Development', id: 2115 },
+                { name: 'Marketing', id: 11151 },
+                { name: 'Landing page', id: 11152 },
             ],
             shortDesc: [
                 {
@@ -590,7 +597,7 @@ const caseStudiesData = [
                     id: 2117,
                 },
             ],
-            img: '/vod-thumbnail.jpg',
+            img: '/mosaic-thumbnail.jpg',
             clientOverview: {
                 id: 2118,
                 title: 'Client Overview',

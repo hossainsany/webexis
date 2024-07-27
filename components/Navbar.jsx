@@ -1,30 +1,61 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-import { NavLinks, BurgerMenu } from '.';
-import DarkModeToggle from './DarkModeToggle';
+import { NavLinks, BurgerMenu, DarkModeToggle, NavLinksMobile } from '.';
 
 const Navbar = () => {
     const [clicked, setClicked] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const navPaths = [
+        { url: '/', text: 'Home', id: 1 },
+        // { url: '/about', text: 'About', id: 2 },
+        { url: '/services', text: 'Services', id: 3 },
+        { url: '/case-studies', text: 'Portfolio', id: 4 },
+        { url: '/contact', text: 'Contact', id: 5 },
+    ];
 
     return (
-        <nav className='flex text-darkText min-h-16 px-4 sticky top-[-1px] left-0 w-full z-10 bg-[#f6f6f6] dark:bg-tertiary text-secondary dark:text-primary shadow-md'>
+        <motion.nav
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            transition={{ ease: 'easeInOut', duration: 0.4 }}
+            className=' fixed flex text-darkText min-h-16 px-4 top-[-1px] left-0 w-full bg-[#f6f6f6] dark:bg-tertiary text-secondary dark:text-primary shadow-md z-50'
+        >
             <div className='container flex justify-between items-center mx-auto'>
                 <div className='log rounded-full dark:border-2 dark:border-white min-w-[45px] flex justify-center'>
-                    <Link href={'/'}>
+                    <Link href={'/'} onClick={() => setClicked(false)}>
                         <Image src={'/logo.png'} alt='webexis logo' width={42} height={42} />
                     </Link>
                 </div>
-                <NavLinks clicked={clicked} onSetClick={setClicked} />
-                <div className='flex '>
+                {isMobile ? (
+                    <NavLinksMobile clicked={clicked} onSetClick={setClicked} navPaths={navPaths} />
+                ) : (
+                    <NavLinks clicked={clicked} onSetClick={setClicked} navPaths={navPaths} />
+                )}
+                <div className='flex items-center'>
                     <DarkModeToggle />
-                    <BurgerMenu clicked={clicked} onSetClicked={setClicked} />
+                    {isMobile && <BurgerMenu clicked={clicked} onSetClicked={setClicked} />}
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 
