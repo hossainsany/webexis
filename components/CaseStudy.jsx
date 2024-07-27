@@ -10,7 +10,7 @@ const CaseStudy = ({ slug }) => {
 
     useEffect(() => {
         setCurrentStudy(caseStudiesData.find((item) => item.caseStudy.slug === slug)?.caseStudy);
-    }, []);
+    }, [slug]);
 
     return (
         <>
