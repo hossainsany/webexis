@@ -1,16 +1,13 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
 import { CTA, Filter, PageHero, ProjectCard } from '@/components';
-import caseStudiesData from '@/constants/case-study';
+import { caseStudiesData } from '@/data';
 import { useState } from 'react';
 
 const PortfolioPage = () => {
     const [projects, setProjects] = useState(caseStudiesData);
     const [industry, setIndustry] = useState('all');
     const [techStack, setTechStack] = useState('all');
-    console.log(industry, techStack, projects);
-
     const handleFilter = (e) => {
         e.preventDefault();
 
@@ -54,7 +51,7 @@ const PortfolioPage = () => {
             />
             <div className='pt-14 pb-24 bg-lightBg-alt dark:bg-darkBg-alt dark:text-primary'>
                 <div className='container mx-auto px-4 md:px-0'>
-                    <div layout className='flex flex-wrap justify-between'>
+                    <div className='flex flex-wrap justify-between'>
                         {projects.length < 1 ? (
                             <p className='text-center text-2xl font-semibold w-full'>
                                 No Results Found, Try Something Different.

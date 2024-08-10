@@ -109,8 +109,8 @@ const ContactForm = ({ itemsEnd }) => {
                     transition={{
                         duration: 0.3,
                         type: 'spring',
-                        stiffness: '20',
-                        damping: 10,
+                        stiffness: '15',
+                        damping: 13,
                         mass: 2,
                     }}
                     disabled={loading}

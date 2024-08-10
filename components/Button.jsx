@@ -7,7 +7,7 @@ const Button = ({ link, children }) => {
     return (
         <Link href={link}>
             <motion.button
-                className=' py-[12px] px-[34px] dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md relative radial-gradient overflow-hidden'
+                className={` py-[12px] px-[34px] dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md relative radial-gradient overflow-hidden `}
                 initial={{ '--x': '-100%' }}
                 whileHover={{ '--x': '100%' }}
                 transition={{

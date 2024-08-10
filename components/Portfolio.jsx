@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import caseStudiesData from '@/constants/case-study';
 import { AngleRight } from '@/assets/svg';
 import { ProjectCard } from '.';
+import { caseStudiesData } from '@/data';
 
 const Portfolio = () => {
     const shortProjects = caseStudiesData.slice(0, 3);

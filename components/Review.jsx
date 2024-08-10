@@ -35,7 +35,7 @@ const Review = ({ title, desc, img, author, position, stars, url, date }) => {
     };
 
     return (
-        <div className='w-[330px] md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 mr-[7px] ml-[13px] md:mx-0 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'>
+        <div className='w-[360px] md:w-[600px] bg-lightBg-alt dark:dark:bg-[#292F39] p-4 md:p-6 mr-[20px] ml-[20px] mx-auto md:mx-0 rounded flex flex-col justify-between hover:drop-shadow-2xl transition-all hover:transition-all hover:duration-300 overflow-x-auto flex-shrink-0'>
             <div className=''>
                 {stars ? (
                     <div className='flex justify-between items-center pb-8'>

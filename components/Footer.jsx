@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
 
 const footerLinks = [
@@ -11,7 +12,7 @@ const footerLinks = [
         content: [
             { text: 'About WebExis', link: '/about' },
             { text: 'Our Services', link: '/services' },
-            { text: 'Projects', link: '/projects' },
+            { text: 'Case Studies', link: '/case-studies' },
             { text: 'Contact Us', link: '/contact' },
         ],
     },
@@ -110,14 +111,25 @@ const Footer = () => {
                                 placeholder='Your Email'
                                 value={newsletterInput}
                                 onChange={(e) => setnewsletterInput(e.target.value)}
-                                className='py-[10px] max-h-[100px] w-full px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
+                                className='py-[10px] max-h-[100px] w-full px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
                             />
-                            <button
-                                type='submit'
-                                className='btn bg-darkBg text-primary rounded-tl-none rounded-bl-none dark:border-l-[0px]'
+                            <motion.button
+                                className=' py-[10px] px-[34px] dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md rounded-tl-none rounded-bl-none dark:border-l-[0px] relative radial-gradient overflow-hidden'
+                                initial={{ '--x': '-100%' }}
+                                whileHover={{ '--x': '100%' }}
+                                transition={{
+                                    duration: 0.3,
+                                    type: 'spring',
+                                    stiffness: '20',
+                                    damping: 10,
+                                    mass: 2,
+                                }}
                             >
-                                Submit
-                            </button>
+                                <span className='tracking-wide text-primary h-full w-full block relative linear-gradient z-10'>
+                                    Submit
+                                </span>
+                                <span className='block absolute inset-0 p-px linear-overlay' />
+                            </motion.button>
                         </form>
                     </div>
 

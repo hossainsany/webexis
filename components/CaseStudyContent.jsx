@@ -19,7 +19,7 @@ const CaseStudyContent = ({ img, textFirst, children }) => {
     }, []);
 
     return (
-        <div className='flex flex-col md:flex-row justify-between items-center border-b-2 border-accent/30 py-8'>
+        <div className='flex flex-col md:flex-row justify-between items-center border-b-2 py-20 border-accent/30'>
             <div className={`flex-1 ${textFirst && !isMobile ? 'order-1' : 'order-2 '}`}>
                 {children}
             </div>
@@ -31,7 +31,7 @@ const CaseStudyContent = ({ img, textFirst, children }) => {
                 >
                     <Image
                         src={img}
-                        alt=''
+                        alt='screenshot of project'
                         height={400}
                         width={400}
                         className='block h-full w-full object-cover group-hover:scale-[105%] transition-all duration-300 ease-out'

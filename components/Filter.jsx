@@ -36,7 +36,7 @@ const Filter = ({ industry, setIndustry, techStack, setTechStack, handleFilter }
                         >
                             <option value='all'>All</option>
                             <option value='wordpress'>WordPress</option>
-                            <option value='nextjs'>Next.js</option>
+                            <option value='react'>React/Next.js</option>
                             <option value='mern'>MERN</option>
                             <option value='cms'>Custom CMS</option>
                         </select>

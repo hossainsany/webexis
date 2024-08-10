@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { easeInOut, motion } from 'framer-motion';
-import { reviews } from '@/constants/data';
+import { motion } from 'framer-motion';
+import { reviews } from '@/data';
 import { Review } from '@/components';
 import { AngleLeft, AngleRight } from '@/assets/svg';
 
@@ -12,9 +12,9 @@ const Testimonials = () => {
     const [nextHandleTriggered, setNextHandleTriggered] = useState(false);
     const [prevHandleTriggered, setPrevHandleTriggered] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const currentReview = [...reviews.slice(-2), ...reviews, ...reviews.slice(0, 2)];
+    const currentReview = [...reviews.slice(-3), ...reviews, ...reviews.slice(0, 5)];
 
-    const mobileWidth = -370 * currentIndex;
+    const mobileWidth = -400 * currentIndex;
     const deskWidth = -620 * currentIndex;
 
     const handleNext = async () => {
@@ -85,7 +85,7 @@ const Testimonials = () => {
                     <p className='text-center'>Client Experiences with Webexis</p>
                 </div>
             </div>
-            <div className='overflox-auto relative  md:w-full mx-auto'>
+            <div className='w-[360px] overflox-auto relative  md:w-full mx-auto'>
                 <div className='absolute bottom-[-50px] left-[50%] translate-x-[-50%] translate-y-[50%] flex justify-center items-center'>
                     <button
                         onClick={handlePrev}
@@ -102,7 +102,7 @@ const Testimonials = () => {
                 </div>
 
                 <motion.div
-                    className={`grid grid-flow-col md:gap-5`}
+                    className={` flex justify-center md:grid md:grid-flow-col md:gap-5`}
                     initial={{ translateX: 0 }}
                     animate={{
                         translateX: isMobile ? mobileWidth : deskWidth,

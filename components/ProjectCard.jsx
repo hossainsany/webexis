@@ -10,8 +10,8 @@ const ProjectCard = ({ caseStudy, i }) => {
             initial={{ y: 70, opacity: 0, scale: 0.95 }}
             whileInView={{ y: 0, opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: 'easeInOut', delay: i * 0.03 }}
-            className={`group w-full lg:w-full xl:w-full p-4 md:p-6 lg:p-10 mb-10 rounded bg-lightBg dark:bg-darkBg flex flex-col lg:flex-row hover:shadow-lg transition-all duration-300 ease-linear lg:overflow-x-hidden`}
+            transition={{ duration: 0.5, ease: 'easeInOut', delay: i * 0.03 }}
+            className={`group w-full lg:w-full xl:w-full p-4 md:p-6 lg:p-10 mb-10 rounded bg-lightBg dark:bg-darkBg flex flex-col lg:flex-row hover:shadow-lg lg:overflow-x-hidden transition-shadow`}
         >
             <div className='lg:basis-[25%] xl:basis-1/4  order-2 lg:order-1 mb-6 md:mb-0 flex flex-col md:max-h-[120px] lg:max-h-[300px]'>
                 <h3 className='text-2xl md:text-[30px] lg:text-[30px] lg:leading-10 font-bold capitalize mb-4 md:mb-5 mt-0'>

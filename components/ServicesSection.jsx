@@ -57,7 +57,7 @@ const ServicesSection = ({ imgFirst, img, title, text, url, i }) => {
                     </div>
                 </div>
                 <div
-                    className={`flex-1 w-full h-[600px] mb-6 md:mb-0  ${
+                    className={`flex-1 w-full h-[600px] mb-6 md:mb-0 rounded-md overflow-hidden md:rounded-none  ${
                         imgFirst ? 'order-1' : 'order-1 md:order-2'
                     }`}
                 >
@@ -65,7 +65,7 @@ const ServicesSection = ({ imgFirst, img, title, text, url, i }) => {
                         src={img}
                         alt=''
                         height={600}
-                        width={600}
+                        width={800}
                         className='w-full h-full object-cover'
                     />
                 </div>

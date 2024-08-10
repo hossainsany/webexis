@@ -43,13 +43,13 @@ const Faq = () => {
                     <p>Answers to Common Inquiries</p>
                 </div>
                 <div className='flex flex-col md:flex-row justify-between shrink-0 gap-5 flex-1'>
-                    <div className='mx-auto w-[350px] md:h-[500px] md:w-[400px] rounded overflow-hidden'>
+                    <div className='mx-auto w-[350px] md:h-[500px] md:w-[400px] rounded-xl overflow-hidden group'>
                         <Image
-                            src={'/mosaic-thumbnail.jpg'}
+                            src={'/faq.jpg'}
                             alt=''
                             width={400}
                             height={400}
-                            className='w-full h-full object-cover'
+                            className='w-full h-full object-cover group-hover:scale-[105%] transition-all ease-in-out duration-500'
                         />
                     </div>
                     <div className='w-full md:w-[60%]'>

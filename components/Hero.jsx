@@ -80,7 +80,7 @@ const Hero = () => {
                         Discover professional web design and development tailored to your needs.
                         We&apos;re your partner in creating affordable, effective digital solutions.
                     </p>
-                    <Button link='/contact'>Learn More</Button>
+                    <Button link='/services'>Learn More</Button>
                 </div>
                 <div className='img flex-1 order-1 md:order-2'>
                     <Image

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { serviceCards } from '@/constants/data';
+import { serviceCards } from '@/data';
 import { Cards } from '.';
 
 const Services = () => {
@@ -45,7 +45,7 @@ const Services = () => {
                                 desc={card.desc}
                                 img={card.img}
                                 imgAlt={card.imgAlt}
-                                key={card.title}
+                                key={card.id}
                                 index={i}
                             />
                         ))}
