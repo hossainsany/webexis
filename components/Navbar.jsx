@@ -37,7 +37,7 @@ const Navbar = () => {
             initial={{ y: '-100%' }}
             animate={{ y: 0 }}
             transition={{ ease: 'easeInOut', duration: 0.4 }}
-            className=' fixed flex text-darkText min-h-16 px-4 top-[-1px] left-0 w-full bg-[#f6f6f6] dark:bg-tertiary text-secondary dark:text-primary shadow-md z-50'
+            className=' sticky flex text-darkText min-h-16 px-4 top-[-1px] left-0 w-full bg-[#f6f6f6]/60 dark:bg-tertiary/60 text-secondary dark:text-primary shadow-md z-50 backdrop-blur-[50px]'
         >
             <div className='container flex justify-between items-center mx-auto'>
                 <div className='log rounded-full dark:border-2 dark:border-white min-w-[45px] flex justify-center'>

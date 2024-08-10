@@ -111,7 +111,7 @@ const Footer = () => {
                                 placeholder='Your Email'
                                 value={newsletterInput}
                                 onChange={(e) => setnewsletterInput(e.target.value)}
-                                className='py-[10px] max-h-[100px] w-full px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
+                                className='py-[10px] max-h-[100px] w-[196px] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
                             />
                             <motion.button
                                 className=' py-[10px] px-[34px] dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md rounded-tl-none rounded-bl-none dark:border-l-[0px] relative radial-gradient overflow-hidden'

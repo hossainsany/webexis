@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
                         gtag('config', 'G-3GCZVVD910');`}
                 </Script>
             </head>
-            <body className='font-poppins'>
+            <body className='font-poppins bg-lightBg dark:bg-darkBg'>
                 <Navbar />
                 <main>{children}</main>
                 <Footer />

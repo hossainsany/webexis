@@ -34,7 +34,7 @@ const PageHero = ({
 
     return (
         <section
-            className={`bg-lightBg dark:bg-darkBg text-secondary dark:text-primary pt-12 pb-12  mt-12 md:pt-28 md:pb-24 ${bgStyle}`}
+            className={`bg-lightBg dark:bg-darkBg text-secondary dark:text-primary pt-12 pb-12   md:pt-28 md:pb-24 ${bgStyle}`}
         >
             <div className='container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0'>
                 <div className='flex-1 flex justify-start md:mb-12 lg:my-[-80px]'>
