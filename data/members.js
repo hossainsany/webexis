@@ -30,7 +30,7 @@ const members = [
         id: 21,
         name: 'Shahed Ahmed',
         position: 'Co-founder & Marketing Manager',
-        img: '/shahedahmed.jpg',
+        img: '/shahed.jpg',
         slug: 'shahedahmed',
         contacts: [
             {
