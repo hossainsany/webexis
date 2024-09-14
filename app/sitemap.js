@@ -24,8 +24,21 @@ export default async function sitemap() {
             url: 'https://webexis.net/case-studies/webexis-website-case-study',
             lastModified: new Date(),
         },
+
         {
             url: 'https://webexis.net/case-studies/frontend-youtube-case-study',
+            lastModified: new Date(),
+        },
+        {
+            url: 'https://webexis.net/member',
+            lastModified: new Date(),
+        },
+        {
+            url: 'https://webexis.net/member/hossainsany',
+            lastModified: new Date(),
+        },
+        {
+            url: 'https://webexis.net/member/shahedahmed',
             lastModified: new Date(),
         },
         {
@@ -46,22 +59,6 @@ export default async function sitemap() {
         },
         {
             url: 'https://webexis.net/privacy-policy',
-            lastModified: new Date(),
-        },
-        {
-            url: 'https://www.linkedin.com/company/webexis',
-            lastModified: new Date(),
-        },
-        {
-            url: 'https://www.instagram.com/webexis_/',
-            lastModified: new Date(),
-        },
-        {
-            url: 'https://www.facebook.com/webexis.net/',
-            lastModified: new Date(),
-        },
-        {
-            url: 'https://twitter.com/WebExis_',
             lastModified: new Date(),
         },
     ];

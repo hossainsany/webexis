@@ -26,3 +26,5 @@ export { default as Services } from './Services';
 export { default as ServicesSection } from './ServicesSection';
 export { default as Testimonials } from './Testimonials';
 export { default as USP } from './USP';
+export { default as MemberCard } from './MemberCard';
+export { default as Member } from './Member';
