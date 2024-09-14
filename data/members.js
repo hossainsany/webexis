@@ -48,7 +48,7 @@ const members = [
             {
                 id: 24,
                 title: 'Linkedin',
-                desc: 'linkedin.com/hossainsany/',
+                desc: 'linkedin.com/shahedexpo/',
                 link: 'https://www.linkedin.com/in/shahedexpo/',
             },
         ],
