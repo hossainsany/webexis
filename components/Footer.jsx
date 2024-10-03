@@ -13,6 +13,7 @@ const footerLinks = [
             { text: 'About WebExis', link: '/about' },
             { text: 'Our Services', link: '/services' },
             { text: 'Case Studies', link: '/case-studies' },
+            { text: 'Team', link: '/member' },
             { text: 'Contact Us', link: '/contact' },
         ],
     },

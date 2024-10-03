@@ -28,7 +28,7 @@ const Navbar = () => {
         { url: '/', text: 'Home', id: 1 },
         { url: '/services', text: 'Services', id: 3 },
         { url: '/case-studies', text: 'Portfolio', id: 4 },
-        { url: '/member', text: 'Team', id: 5 },
+       // { url: '/member', text: 'Team', id: 5 },
         { url: '/contact', text: 'Contact', id: 6 },
     ];
 
