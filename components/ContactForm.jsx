@@ -122,7 +122,7 @@ const ContactForm = ({ itemsEnd }) => {
                 >
                     <span className='tracking-wide text-primary h-full w-full block relative linear-gradient z-10'>
                         {loading ? (
-                            <Spinner className='h-[24px] w-[25px] fill-primary animate-spin mx-auto' />
+                            <Spinner className='h-[24px] w-[25px] fill-accent animate-spin mx-auto' />
                         ) : (
                             'Submit'
                         )}
