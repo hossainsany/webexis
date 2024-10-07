@@ -6,35 +6,37 @@ import { motion } from 'framer-motion';
 const USP = () => {
     const items = [
         {
-            id: 1,
-            title: 'Increased client reach:',
-            body: 'We design websites that attract new clients through search engine optimization and strategic online presence.',
-        },
-        {
             id: 2,
             title: 'Showcase your expertise:',
-            body: 'Our web design highlights your unique selling points and builds trust with potential clients.',
+            body: 'We create affordable websites that highlights your unique selling points and builds trust with potential clients.',
         },
         {
-            id: 3,
-            title: 'Simplified lead capture:',
-            body: 'We craft user-friendly websites that encourage visitors to contact you with ease through clear calls to action and accessible contact forms.',
+            id: 1,
+            title: 'Increased client reach:',
+            body: 'Our affordable website design packages use on-page SEO and high-quality content to help you reach more clients and grow your business.',
         },
         {
             id: 4,
             title: 'Mobile-first approach:',
-            body: 'We ensure your website functions flawlessly on all devices, maximizing the opportunity for new clients to reach you.',
+            body: 'With most clients browsing on mobile, we create websites that look stunning on both mobile and desktop devices.',
         },
+
+        {
+            id: 3,
+            title: 'Simplified lead capture:',
+            body: 'We create user-friendly websites with clear calls to action and intuitive design to make it easy for visitors to contact you.',
+        },
+
         {
             id: 5,
             title: 'Ongoing support:',
-            body: 'Our team is here to provide ongoing support and maintenance to keep your website performing at its best and attracting new clients.',
+            body: 'We offer ongoing maintenance and support to keep your website performing well. Our website design packages prices offer transparency and great value.',
         },
     ];
 
     return (
         <section className='py-24 bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'>
-            <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-0'>
+            <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 lg:px-0'>
                 <div className='text md:w-[52%] lg:w-[46%] order-2 md:order-1'>
                     <ul>
                         <motion.h2

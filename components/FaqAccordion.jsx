@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { easeInOut, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const FaqAccordion = ({ answer, question, i }) => {
@@ -26,7 +26,7 @@ const FaqAccordion = ({ answer, question, i }) => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeInOut', delay: i * 0.1 }}
-            className='relative mb-6 flex flex-col'
+            className='relative mb-6'
         >
             <div
                 className='bg-lightBg dark:bg-darkBg py-4 px-6 rounded-md flex justify-between relative z-10 cursor-pointer'
@@ -62,39 +62,47 @@ const FaqAccordion = ({ answer, question, i }) => {
                     ></motion.span>
                 </motion.div>
             </div>
-            <motion.p
+            <motion.div
                 className='bg-light-tertiary shadow-sm dark:bg-tertiary px-6 opacity-0 rounded-b-md'
                 style={{
                     height: 0,
-                    paddingTop: '0px',
-                    paddingBottom: '0px',
                 }}
                 animate={isOpen ? 'open' : 'closed'}
                 variants={{
                     open: {
                         opacity: 1,
-                        height:
-                            width < 769
-                                ? '180px'
-                                : width > 768 && width < 1024
-                                ? '170px'
-                                : width > 1023 && width < 1280
-                                ? '125px'
-                                : '100px',
-                        paddingTop: '16px',
-                        paddingBottom: '16px',
+                        height: 'auto',
                     },
                     closed: {
                         opacity: 0,
                         height: 0,
-                        paddingTop: '0px',
-                        paddingBottom: '0px',
                     },
                 }}
                 transition={{ ease: 'easeInOut', duration: 0.5 }}
             >
-                {answer}
-            </motion.p>
+                <motion.p
+                    className='py-4'
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={isOpen ? 'open' : 'closed'}
+                    variants={{
+                        open: {
+                            opacity: 1,
+                            y: 0,
+                        },
+                        closed: {
+                            opacity: 0,
+                            y: -20,
+                        },
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        ease: 'easeOut',
+                        delay: isOpen ? 0.3 : 0,
+                    }}
+                >
+                    {answer}
+                </motion.p>
+            </motion.div>
         </motion.div>
     );
 };

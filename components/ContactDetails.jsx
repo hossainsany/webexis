@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
 import { useState } from 'react';
+import { toast, Toaster } from 'sonner';
 
 const ContactDetails = () => {
     const [isCopied, setIsCopied] = useState(false);
@@ -12,10 +13,13 @@ const ContactDetails = () => {
         setTimeout(() => {
             setIsCopied(false);
         }, 2000);
+
+        toast.info('Email copied to clipboard.');
     };
 
     return (
         <div className='text-secondary dark:text-primary flex-1 flex flex-col order-last md:order-first mt-12 md:mt-0'>
+            <Toaster richColors position='bottom-right' />
             <h2 className='text-2xl font-semibold mb-4'>Contact details</h2>
             <div className='relative mb-6'>
                 <h3 className='text-lg font-semibold '>Email</h3>
@@ -24,13 +28,6 @@ const ContactDetails = () => {
                     onClick={handleCopy}
                 >
                     info@webexis.net
-                </p>
-                <p
-                    className={`absolute bottom-[0px] left-[25%] text-sm bg-accent px-2 py-[2px] rounded-lg opacity-0 transition-all duration-500 ease-in-out ${
-                        isCopied ? 'opacity-85' : 'opacity-0'
-                    }`}
-                >
-                    ✅ Copied
                 </p>
             </div>
             <div className='mb-6'>

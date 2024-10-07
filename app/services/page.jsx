@@ -56,6 +56,7 @@ const page = () => {
                     url={d.url}
                     imgFirst={d.imgFirst}
                     img={d.img}
+                    bgAlt={i === 1}
                 />
             ))}
             <Faq />

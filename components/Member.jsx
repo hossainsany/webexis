@@ -3,7 +3,7 @@ import Image from 'next/image';
 const Member = ({ name, position, img, contacts }) => {
     return (
         <div className='flex flex-col md:flex-row justify-between items-start bg-lightBg-alt dark:bg-tertiary p-5 md:p-10 rounded-xl shadow-lg'>
-            <div className='flex justify-center w-full md:w-auto'>
+            <div className='flex justify-center w-full md:w-auto px-4 lg:px-0'>
                 <div className='overflow-hidden rounded-lg max-w-[300px] mb-8 md:mb-0'>
                     <Image
                         src={img}

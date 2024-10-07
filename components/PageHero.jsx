@@ -10,9 +10,10 @@ const PageHero = ({
     headingText,
     headingTextShort,
     bgAlt,
+    imgHFull,
 }) => {
     const [isMobile, setIsMobile] = useState(false);
-    const [currentHeadingText, setCurrentHeadingText] = useState('');
+    const [currentHeadingText, setCurrentHeadingText] = useState(headingText);
 
     const bgStyle = bgAlt ? 'bg-lightBg-alt dark:bg-darkBg-alt' : 'bg-primary dark:bg-darkBg';
 
@@ -34,17 +35,22 @@ const PageHero = ({
 
     return (
         <section
-            className={`bg-lightBg dark:bg-darkBg text-secondary dark:text-primary pt-12 pb-12   md:pt-28 md:pb-24 ${bgStyle}`}
+            className={`bg-lightBg dark:bg-darkBg text-secondary dark:text-primary pt-12 pb-12 md:min-h-[442px] md:pt-28 md:pb-24 ${bgStyle}`}
         >
             <div className='container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0'>
                 <div className='flex-1 flex justify-start md:mb-12 lg:my-[-80px]'>
-                    <div className='max-h-[400px] lg:w-[550px] mb-4 md:mb-0'>
+                    <div
+                        className={`${
+                            imgHFull ? 'h-[370px] md:h-[400px]' : 'h-[225px] md:h-[385px]'
+                        }  w-full lg:w-[550px] mb-4 md:mb-0`}
+                    >
                         <Image
                             src={headingImg}
                             alt=''
-                            height={500}
-                            width={960}
+                            height={400}
+                            width={660}
                             className='h-full w-full object-cover'
+                            priority={true}
                         />
                     </div>
                 </div>

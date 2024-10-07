@@ -4,46 +4,49 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Spinner } from '@/assets/svg';
+import axios from 'axios';
+import { toast, Toaster } from 'sonner';
 
 const ContactForm = ({ itemsEnd }) => {
-    const [nameInput, setNameInput] = useState('');
-    const [emailInput, setEmailInput] = useState('');
-    const [messageInput, setMessageInput] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
-        const formData = new FormData(e.target);
+        const formData = {
+            name,
+            email,
+            message,
+        };
+
         try {
-            const response = await fetch(process.env.NEXT_PUBLIC_GET_FORM_ENDPOINT, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    Accept: 'application/json',
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+            setLoading(true);
+            const res = await axios.post('/api/contact', formData);
+            if (!res.data.OK) {
+                throw new Error(`Something went wrong, status: ${res.status}`);
             }
-
+            toast.success('Submission successful!');
             router.push('/form-success');
         } catch (err) {
-            console.error(err);
+            toast.error(err.message);
             router.push('/form-error');
         } finally {
             setLoading(false);
-            setNameInput('');
-            setEmailInput('');
-            setMessageInput('');
+            setName('');
+            setEmail('');
+            setMessage('');
         }
     };
 
     return (
         <form onSubmit={handleSubmit} className={`flex-1  `}>
+            <div>
+                <Toaster position='bottom-right' richColors />
+            </div>
             <div
                 className='flex flex-col mx-auto gap-4 md:justify-end md:items-end w-full'
                 style={
@@ -68,8 +71,8 @@ const ContactForm = ({ itemsEnd }) => {
                     transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
                     type='text'
                     name='name'
-                    value={nameInput}
-                    onChange={(e) => setNameInput(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
                     placeholder='Your Name'
                     className='w-full md:[400px] lg:w-full py-3 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt  text-secondary dark:text-primary'
@@ -81,8 +84,8 @@ const ContactForm = ({ itemsEnd }) => {
                     transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
                     type='email'
                     name='email'
-                    value={emailInput}
-                    onChange={(e) => setEmailInput(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder='Your Email'
                     className='w-full md:[400px] lg:w-full py-3 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
@@ -93,17 +96,19 @@ const ContactForm = ({ itemsEnd }) => {
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
-                    value={messageInput}
+                    value={message}
                     name='message'
-                    onChange={(e) => setMessageInput(e.target.value)}
+                    onChange={(e) => setMessage(e.target.value)}
                     required
                     rows={6}
-                    placeholder='Your Message'
+                    placeholder='Tell us about your project to get a free quote!'
                     className='w-full md:[400px] lg:w-full py-3 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
                 />
 
                 <motion.button
-                    className=' py-[12px] px-[34px] w-full dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md relative radial-gradient overflow-hidden'
+                    className={`py-[12px] px-[34px] w-full dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md relative radial-gradient overflow-hidden ${
+                        loading ? 'cursor-not-allowed' : 'cursor-pointer'
+                    }`}
                     initial={{ '--x': '-100%' }}
                     whileHover={{ '--x': '100%' }}
                     transition={{

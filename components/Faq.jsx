@@ -4,13 +4,13 @@ import FaqAccordion from './FaqAccordion';
 const faqs = [
     {
         id: 1,
-        question: 'What is included in your web design services?',
-        answer: 'Our web design services include creating user-friendly layouts, responsive design, and stunning visuals. We also focus on ensuring that the design aligns with your brand and enhances user engagement.',
+        question: 'What is included in your affordable website design services?',
+        answer: 'Our affordable website design services include user-friendly layouts, responsive designs, and stunning visuals. We focus on aligning your design with your brand to enhance user engagement. Explore our website design packages starting from only $499 for a 3-page site using premade templates.',
     },
     {
         id: 2,
-        question: 'How long does it take to develop a website?',
-        answer: "The timeline for web development depends on the project's complexity and scope. Typically, it can take from a few weeks to a few months. We provide a detailed timeline after assessing your specific requirements.",
+        question: 'How long does it take to build a website?',
+        answer: "The timeline for building a website depends on the project's complexity and scope. Typically, it takes from a few weeks to a few months. After assessing your specific needs, our web development firm will provide a detailed timeline.",
     },
     {
         id: 3,
@@ -19,25 +19,25 @@ const faqs = [
     },
     {
         id: 4,
-        question: 'What are the benefits of using your web hosting services?',
-        answer: 'Our web hosting services offer high uptime, fast load times, robust security features, and dedicated support. With our hosting, you receive free maintenance and basic website edits like replacing text or images.',
+        question: 'What are your website design package prices?',
+        answer: 'Our website design packages start from only $499 for a 3-page site built with premade templates on WordPress, Webflow, or Framer. For custom websites, please provide details using our contact form to receive a free quote tailored to your needs.',
     },
     {
         id: 5,
-        question: 'Can I update my website content on my own?',
-        answer: 'Yes, we develop websites with user-friendly content management systems (CMS) like WordPress and Sanity that allow you to easily update and manage your website content without needing technical expertise.',
+        question: 'What is included in the $499 website design package?',
+        answer: 'Our $499 package includes a 3-page site designed using premade templates on WordPress, Webflow, or Framer. This package ensures a professional look while keeping costs low. Additional pages and custom features can be added for an extra fee.',
     },
     {
         id: 6,
-        question: 'What if I already have a website and need a redesign?',
-        answer: 'We can help with that too! Our team will assess your current website, understand your goals, and provide a comprehensive redesign plan to improve both aesthetics and functionality.',
+        question: 'Can you help me build a custom website?',
+        answer: 'Absolutely! We specialize in creating custom websites tailored to your specific requirements. To get started, please provide the details of your project using our contact form, and we’ll send you a free quote based on your needs.',
     },
 ];
 
 const Faq = () => {
     return (
         <section className='bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary py-24'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto px-4 lg:px-0'>
                 <div className='mb-24 text-center'>
                     <h2 className='text-3xl font-bold '>FAQ</h2>
                     <p>Answers to Common Inquiries</p>

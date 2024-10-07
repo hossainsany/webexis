@@ -5,9 +5,13 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '.';
 
-const ServicesSection = ({ imgFirst, img, title, text, url, i }) => {
+const ServicesSection = ({ imgFirst, img, title, text, url, i, bgAlt }) => {
     return (
-        <section className='pb-24 md:pb-0 overflow-hidden bg-light-tertiary dark:bg-tertiary text-secondary dark:text-primary'>
+        <section
+            className={`py-24 md:py-0 overflow-hidden text-secondary dark:text-primary ${
+                bgAlt ? 'bg-lightBg dark:bg-darkBg ' : 'bg-light-tertiary dark:bg-tertiary'
+            }`}
+        >
             <div className='flex flex-col md:flex-row mx-auto px-4 md:px-0'>
                 <div
                     className={`flex-1 flex flex-col justify-center items-center ${
@@ -51,7 +55,7 @@ const ServicesSection = ({ imgFirst, img, title, text, url, i }) => {
                                 delay: 0.3,
                             }}
                         >
-                            <Button link='/contact'>Learn More</Button>{' '}
+                            <Button link='/contact'>Learn More</Button>
                             {/*replace with {url} slug letter*/}
                         </motion.div>
                     </div>

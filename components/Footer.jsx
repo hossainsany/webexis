@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import axios from 'axios';
+import { toast, Toaster } from 'sonner';
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
 
@@ -64,16 +66,37 @@ const icons = [
 ];
 
 const Footer = () => {
-    const [newsletterInput, setnewsletterInput] = useState('');
+    const [email, setEmail] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setnewsletterInput('');
+
+        try {
+            setIsLoading(true);
+            const res = await axios.post('/api/email', { email });
+            if (!res.data.OK) {
+                throw new Error(`Something went wrong, status: ${res.status}`);
+            }
+            toast.success('Email submitted successfully!');
+        } catch (err) {
+            setError(err.message);
+            toast.error(err.message);
+        } finally {
+            setEmail('');
+            setIsLoading(false);
+        }
     };
 
     return (
-        <footer className='bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary py-5 flex flex-col px-5 md:py-5 md:px-0 lg:px-4 xl:px-0'>
-            <div className='container mx-auto'>
+        <footer className='bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'>
+            <div className='container mx-auto px-4 lg:px-0'>
+                {/* toast */}
+                <div>
+                    <Toaster position='bottom-right' expand={false} richColors />
+                </div>
+
                 {/* socials cta  */}
                 <div className='flex flex-col justify-start items-start md:flex-row md:justify-between md:items-center py-10 border-b-[1px] border-accent/[0.3]'>
                     <h2 className='text-2xl md:font-medium pb-5 md:pb-0'>
@@ -103,19 +126,24 @@ const Footer = () => {
                         <h3 className='text-lg xl:text-xl pb-3 font-medium'>
                             Stay up to date with our newsletters:
                         </h3>
+
                         <form
                             onSubmit={handleSubmit}
-                            className='flex justify-center items-center w-full md:flex-wrap md:block '
+                            className='flex justify-center items-center w-full md:flex-wrap md:block xl:flex xl:justify-start relative'
                         >
                             <input
-                                type='text'
+                                type='email'
                                 placeholder='Your Email'
-                                value={newsletterInput}
-                                onChange={(e) => setnewsletterInput(e.target.value)}
-                                className='py-[10px] max-h-[100px] w-[196px] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
+                                required={true}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className=' py-[10px] max-h-[100px] w-[70%] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
                             />
                             <motion.button
-                                className=' py-[10px] px-[34px] dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md rounded-tl-none rounded-bl-none dark:border-l-[0px] relative radial-gradient overflow-hidden'
+                                className={`w-[30%] md:w-auto lg:w-[115px] xl:w-auto py-[10px] px-0 md:px-[24px] lg:px-[10px] xl:px-[24px] dark:border-2 dark:border-accent rounded-md rounded-tl-none rounded-bl-none dark:border-l-[0px] relative radial-gradient overflow-hidden ${
+                                    isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
+                                }`}
+                                disabled={isLoading}
                                 initial={{ '--x': '-100%' }}
                                 whileHover={{ '--x': '100%' }}
                                 transition={{
@@ -126,12 +154,27 @@ const Footer = () => {
                                     mass: 2,
                                 }}
                             >
-                                <span className='tracking-wide text-primary h-full w-full block relative linear-gradient z-10'>
-                                    Submit
+                                <span className='tracking-wide text-primary h-full w-full relative linear-gradient z-10 min-w-[83px] flex justify-center items-center'>
+                                    {isLoading ? (
+                                        <div className='h-[24px] w-[24px] animate-spin'>
+                                            <svg
+                                                xmlns='http://www.w3.org/2000/svg'
+                                                viewBox='0 0 512 512'
+                                                className='fill-secondary dark:fill-accent'
+                                            >
+                                                <path d='M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z' />
+                                            </svg>
+                                        </div>
+                                    ) : (
+                                        <p>Subscribe</p>
+                                    )}
                                 </span>
                                 <span className='block absolute inset-0 p-px linear-overlay' />
                             </motion.button>
                         </form>
+                        <p className=' text-[11px] opacity-80'>
+                            *By subscribing, you agree to receive our emails and updates.
+                        </p>
                     </div>
 
                     {/* footer liks  */}
@@ -160,7 +203,7 @@ const Footer = () => {
                 </div>
 
                 {/* copyright text  */}
-                <p className='text-center text-sm font-light opacity-[85%]'>
+                <p className='text-center text-sm font-light opacity-[85%] pb-6'>
                     All rights reserved <span className='text-accent'>© 2024 WebExis.</span>
                 </p>
             </div>

@@ -3,8 +3,21 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '.';
+import { useState } from 'react';
 
 const ProjectCard = ({ caseStudy, i }) => {
+    const [desc, setDesc] = useState(caseStudy.projectOverview.slice(0, 325) + '...');
+
+    const handleReadMore = () => {
+        setDesc((prev) => {
+            if (prev.length > 350) {
+                return caseStudy.projectOverview.slice(0, 325) + '...';
+            } else {
+                return caseStudy.projectOverview;
+            }
+        });
+    };
+
     return (
         <motion.div
             initial={{ y: 70, opacity: 0, scale: 0.95 }}
@@ -20,31 +33,35 @@ const ProjectCard = ({ caseStudy, i }) => {
                 <div className='flex flex-wrap gap-x-2 gap-y-1'>
                     {caseStudy.tags.map((tag) => (
                         <div
-                            key={tag.id}
+                            key={tag}
                             className='text-sm  border-[2px] border-accent/[50%] py-[2px] px-1 md:py-1 md:px-2 text-secondary dark:text-primary rounded'
                         >
-                            <p className='opacity-80'>{tag.name}</p>
+                            <p className='opacity-80'>{tag}</p>
                         </div>
                     ))}
                 </div>
             </div>
             <div className=' order-3 lg:order-2 lg:basis-[60%] xl:basis-3/5 lg:px-6 md:mt-6 lg:mt-14 flex flex-col justify-between lg:items-end'>
                 <div className=''>
-                    {caseStudy.shortDesc.map((desc) => (
-                        <p key={desc.id} className='mb-4 md:mb-8 text-base'>
-                            {desc.desc}
-                        </p>
-                    ))}
+                    <p>
+                        {desc}
+                        <button
+                            className='text-accent font-medium ml-4 hover:underline'
+                            onClick={handleReadMore}
+                        >
+                            {desc.length > 350 ? 'Show Less' : 'Read More'}
+                        </button>
+                    </p>
                 </div>
 
-                <div className='flex gap-x-1 '>
+                <div className='flex gap-x-1 mt-6 lg:mt-0'>
                     <Button link={`/case-studies/${caseStudy.slug}`}>View Case Study</Button>
                 </div>
             </div>
             <div className='lg:basis-[30%] xl:basis-1/4 order-1 mb-6 lg:mb-0 lg:order-3 min-w-[200px]  '>
                 <div className='w-full lg:w-[260px] xl:w-[280px] h-full rounded overflow-hidden'>
                     <Image
-                        src={caseStudy.img}
+                        src={caseStudy.content.img1}
                         alt='project img'
                         width={400}
                         height={400}

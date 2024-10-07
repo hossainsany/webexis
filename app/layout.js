@@ -1,4 +1,5 @@
 import { Footer, Navbar } from '@/components';
+import CaseStudyProvider from '@/context/CaseStudProvider';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
@@ -12,29 +13,30 @@ const poppins = Poppins({
 export const metadata = {
     metadataBase: new URL('https://webexis.net'),
     title: {
-        default: 'WebExis - Your Web Design, Development, and Marketing Partner',
+        default: 'WebExis - Your Affordable Website Design & Development Partner',
         template: '%s | WebExis',
     },
     keywords: [
         'webexis',
         'web design',
-        'Website development',
-        'digital marketing agency',
-        'Custom web solutions',
-        'best web design agency',
-        'best web design agency in sylhet',
-        'SEO (Search Engine Optimization)',
-        'Social media marketing',
-        'Affordable web design services for small businesses',
-        'Custom website development solutions for startups',
-        'Local SEO services for regional businesses',
-        'Social media marketing campaigns for increased engagement',
+        'web design agency',
+        'web development firm',
+        'web design firms',
+        'web design company',
+        'affordable website design',
+        'affordable website packages',
+        'website design packages',
+        'cheapest way to build a website',
+        'web development agency',
+        'web development company',
+        'website creator for business',
+        'best website creators',
     ],
     description:
-        'Elevate your online presence with WebExis. We specialize in custom web design, web development, and digital marketing strategies. Our expert team creates stunning, user-friendly websites to attract clients, streamline lead generation, and propel your business forward.',
+        'Discover affordable website design and development services at Webexis. Our web design company offers tailored website design packages starting from just $499. Partner with our experienced web developers to enhance your online presence and drive business growth with custom solutions that fit your budget.',
     openGraph: {
         description:
-            'Elevate your online presence with WebExis. We specialize in custom web design, web development, and digital marketing strategies. Our expert team creates stunning, user-friendly websites to attract clients, streamline lead generation, and propel your business forward.',
+            'Discover affordable website design and development services at Webexis. Our web design company offers tailored website design packages starting from just $499. Partner with our experienced web developers to enhance your online presence and drive business growth with custom solutions that fit your budget.',
         images: [''],
     },
 };
@@ -56,9 +58,11 @@ export default function RootLayout({ children }) {
                 </Script>
             </head>
             <body className='font-poppins bg-lightBg dark:bg-darkBg'>
-                <Navbar />
-                <main>{children}</main>
-                <Footer />
+                <CaseStudyProvider>
+                    <Navbar />
+                    <main>{children}</main>
+                    <Footer />
+                </CaseStudyProvider>
             </body>
         </html>
     );

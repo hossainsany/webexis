@@ -77,10 +77,13 @@ const Hero = () => {
                         </span>
                     </h1>
                     <p className='pb-8 text-base'>
-                        Discover professional web design and development tailored to your needs.
-                        We&apos;re your partner in creating affordable, effective digital solutions.
+                        Discover affordable website design and development services crafted to meet
+                        your business needs. As a leading web design company and web development
+                        firm, we specialize in delivering professional, affordable websites and
+                        custom website design packages, ensuring your digital presence is effective
+                        and engaging.
                     </p>
-                    <Button link='/services'>Learn More</Button>
+                    <Button link='/services'>Explore Our Services</Button>
                 </div>
                 <div className='img flex-1 order-1 md:order-2'>
                     <Image

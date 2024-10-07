@@ -1,12 +1,8 @@
-'use client';
-
-import { useState } from 'react';
-
 const Filter = ({ industry, setIndustry, techStack, setTechStack, handleFilter }) => {
     return (
-        <section className='relative bg-light-tertiary dark:bg-tertiary lg:bg-transparent'>
-            <div className='h-[100px] hidden lg:block bg-lightBg dark:bg-darkBg'></div>
-            <div className='h-[100px] hidden lg:block bg-lightBg-alt dark:bg-darkBg-alt'></div>
+        <section className='relative bg-light-tertiary dark:bg-tertiary lg:bg-transparent '>
+            <div className='h-[60px] hidden lg:block bg-lightBg dark:bg-darkBg'></div>
+            <div className='h-[60px] hidden lg:block bg-lightBg-alt dark:bg-darkBg-alt'></div>
 
             <div className='container mx-auto px-4 lg:px-0 py-4 bg-light-tertiary dark:bg-tertiary text-secondary dark:text-primary lg:shadow-md lg:bg-transparent	lg:absolute top-0 lg:top-[50%] left-0 lg:left-[50%] translate-x-0 lg:translate-x-[-50%] tanslate-y-0 lg:translate-y-[-50%] lg:rounded-lg lg:py-12'>
                 <form

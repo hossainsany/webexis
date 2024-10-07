@@ -20,6 +20,7 @@ const page = () => {
                 headingText={headingText}
                 headingTextShort={headingTextShort}
                 bgAlt={true}
+                imgHFull={true}
             />
             <section className='py-24 dark:bg-darkBg '>
                 <div className='container mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between '>

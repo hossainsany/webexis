@@ -13,16 +13,17 @@ const CTA = ({ bgAlt }) => {
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-0 text-start '>
                 <div className='md:max-w-[70%] mb-6 md:mb-0'>
                     <h2 className='text-[22px] leading-7 font-medium lg:text-2xl md:font-semibold pb-4 md:pb-2 '>
-                        Unlock Your Business Potential with a Free Website Design Consultation!
+                        Unlock Your Business Potential with a Free Quote!
                     </h2>
                     <p>
-                        Discover how Webexis can transform your online presence, attract more
-                        clients, and accelerate your business growth. Book your free consultation
-                        today and take the first step towards a thriving service business.
+                        Discover how Webexis can enhance your online presence with affordable
+                        website design. Attract more clients and accelerate your business growth
+                        without breaking the bank. Contact us today for your free quote and take the
+                        first step towards an effective, budget-friendly digital solution!
                     </p>
                 </div>
 
-                <Button link='/contact'>Contact Us Now</Button>
+                <Button link='/contact'>Get a Free Quote</Button>
             </div>
         </section>
     );

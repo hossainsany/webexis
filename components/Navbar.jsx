@@ -28,17 +28,12 @@ const Navbar = () => {
         { url: '/', text: 'Home', id: 1 },
         { url: '/services', text: 'Services', id: 3 },
         { url: '/case-studies', text: 'Portfolio', id: 4 },
-       // { url: '/member', text: 'Team', id: 5 },
+        // { url: '/member', text: 'Team', id: 5 },
         { url: '/contact', text: 'Contact', id: 6 },
     ];
 
     return (
-        <motion.nav
-            initial={{ y: '-100%' }}
-            animate={{ y: 0 }}
-            transition={{ ease: 'easeInOut', duration: 0.4 }}
-            className=' sticky flex text-darkText min-h-16 px-4 top-[-1px] left-0 w-full bg-[#f6f6f6]/60 dark:bg-tertiary/60 text-secondary dark:text-primary shadow-md z-50 backdrop-blur-[50px]'
-        >
+        <nav className=' sticky flex text-darkText min-h-16 px-4 top-[-1px] left-0 w-full bg-[#f6f6f6]/60 dark:bg-tertiary/60 text-secondary dark:text-primary shadow-md z-50 backdrop-blur-[50px]'>
             <div className='container flex justify-between items-center mx-auto'>
                 <div className='log rounded-full dark:border-2 dark:border-white min-w-[45px] flex justify-center'>
                     <Link href={'/'} onClick={() => setClicked(false)}>
@@ -55,7 +50,7 @@ const Navbar = () => {
                     {isMobile && <BurgerMenu clicked={clicked} onSetClicked={setClicked} />}
                 </div>
             </div>
-        </motion.nav>
+        </nav>
     );
 };
 

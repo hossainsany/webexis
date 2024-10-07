@@ -1,27 +1,25 @@
 'use client';
 
-import { CTA, Filter, PageHero, ProjectCard } from '@/components';
-import { caseStudiesData } from '@/data';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CTA, ErrorAnimate, Filter, LoadingAnimate, PageHero, ProjectCard } from '@/components';
+import CaseStudyContext from '@/context/CaseStudyContext';
 
 const PortfolioPage = () => {
-    const [projects, setProjects] = useState(caseStudiesData);
     const [industry, setIndustry] = useState('all');
     const [techStack, setTechStack] = useState('all');
+
+    const { projects, setProjects, isPending, error } = useContext(CaseStudyContext);
+
     const handleFilter = (e) => {
         e.preventDefault();
 
         const filterded = caseStudiesData.filter(({ caseStudy }) => {
             const industryMatch =
                 industry === 'all' ||
-                caseStudy.tags.some((tag) =>
-                    tag.name.toLowerCase().includes(industry.toLowerCase())
-                );
+                caseStudy.tags.some((tag) => tag.toLowerCase().includes(industry.toLowerCase()));
             const techStackMatch =
                 techStack === 'all' ||
-                caseStudy.tags.some((tag) =>
-                    tag.name.toLowerCase().includes(techStack.toLowerCase())
-                );
+                caseStudy.tags.some((tag) => tag.toLowerCase().includes(techStack.toLowerCase()));
 
             return industryMatch && techStackMatch;
         });
@@ -36,7 +34,7 @@ const PortfolioPage = () => {
     return (
         <>
             <PageHero
-                headingTitle={'WebExis Case Studies'}
+                headingTitle={'WebExis Portfolio'}
                 headingSubtitle={'Our Showcase of Success'}
                 headingText={headingText}
                 headingTextShort={headingTextShort}
@@ -52,15 +50,26 @@ const PortfolioPage = () => {
             <div className='pt-14 pb-24 bg-lightBg-alt dark:bg-darkBg-alt dark:text-primary'>
                 <div className='container mx-auto px-4 md:px-0'>
                     <div className='flex flex-wrap justify-between'>
-                        {projects.length < 1 ? (
-                            <p className='text-center text-2xl font-semibold w-full'>
-                                No Results Found, Try Something Different.
-                            </p>
+                        {isPending ? (
+                            <div className='flex flex-col justify-center items-center text-2xl font-medium w-full mt-6'>
+                                <LoadingAnimate text='Just a moment! The portfolio projects are on thier way!' />
+                            </div>
+                        ) : error ? (
+                            <div className='flex flex-col justify-center items-center text-2xl font-medium w-full mt-10'>
+                                <ErrorAnimate
+                                    text={
+                                        error
+                                            ? `Loading Failed, Error: ${error}. Please refresh the page.`
+                                            : 'No Results Found, Try Something Different.'
+                                    }
+                                />
+                            </div>
                         ) : (
+                            projects &&
                             projects.map((singleStudy) => (
                                 <ProjectCard
                                     caseStudy={singleStudy.caseStudy}
-                                    key={singleStudy.caseStudy.id}
+                                    key={singleStudy._id}
                                 />
                             ))
                         )}

@@ -32,7 +32,7 @@ const Services = () => {
             className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-24'
             id='services'
         >
-            <div className='container mx-auto px-2 2xl:px-0'>
+            <div className='container mx-auto px-4 2xl:px-0'>
                 <div className='section-title text-center pb-24'>
                     <h2 className='text-2xl font-semibold '>Comprehensive Web Solutions</h2>
                     <p className='text-base'> Tailored Services for your Success</p>

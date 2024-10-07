@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const Button = ({ link, children }) => {
+const Button = ({ link, taget = '', children }) => {
     return (
-        <Link href={link}>
+        <Link href={link} target={taget}>
             <motion.button
                 className={` py-[12px] px-[34px] dark:py-2.5 dark:px-8 dark:border-2 dark:border-accent rounded-md relative radial-gradient overflow-hidden `}
                 initial={{ '--x': '-100%' }}
@@ -18,7 +18,7 @@ const Button = ({ link, children }) => {
                     mass: 2,
                 }}
             >
-                <span className='tracking-wide text-primary h-full w-full block relative linear-gradient z-10'>
+                <span className='tracking-wide text-primary font-medium h-full w-full block relative linear-gradient z-10'>
                     {children}
                 </span>
                 <span className='block absolute inset-0 p-px linear-overlay' />
