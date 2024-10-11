@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { reviews } from '@/data';
 import { Review } from '@/components';
 import { AngleLeft, AngleRight } from '@/assets/svg';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(1);

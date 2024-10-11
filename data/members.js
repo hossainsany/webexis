@@ -2,8 +2,8 @@ const members = [
     {
         id: 11,
         name: 'Hossain Sany',
-        position: 'Founder & Lead Developer',
-        img: '/hossainsany.jpg',
+        position: 'Founder, Director & Lead Developer',
+        img: 'https://utfs.io/f/6fL5l1KMEr9SePvdbwIMVs9SgTrc7P3OJH4quR1yvFCl8Ihb',
         slug: 'hossainsany',
         contacts: [
             {
@@ -29,8 +29,8 @@ const members = [
     {
         id: 21,
         name: 'Shahed Ahmed',
-        position: 'Co-founder & Marketing Manager',
-        img: '/shahed.jpg',
+        position: 'Marketing Manager',
+        img: 'https://utfs.io/f/6fL5l1KMEr9SYcbCFkmfxO05cC3ywmNkXDrenpRFI9qigthj',
         slug: 'shahedahmed',
         contacts: [
             {

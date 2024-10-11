@@ -14,8 +14,8 @@ const footerLinks = [
         content: [
             { text: 'About WebExis', link: '/about' },
             { text: 'Our Services', link: '/services' },
-            { text: 'Case Studies', link: '/case-studies' },
-            { text: 'Team', link: '/member' },
+            { text: 'Portfolio', link: '/case-studies' },
+            { text: 'Our Team', link: '/member' },
             { text: 'Contact Us', link: '/contact' },
         ],
     },
@@ -82,7 +82,7 @@ const Footer = () => {
             toast.success('Email submitted successfully!');
         } catch (err) {
             setError(err.message);
-            toast.error(err.message);
+            toast.error(err.status === 409 ? "Looks like you're already subscribed." : err.message);
         } finally {
             setEmail('');
             setIsLoading(false);
@@ -123,8 +123,8 @@ const Footer = () => {
                 {/* newsletter form  */}
                 <div className='py-5 md:py-20 flex justify-between flex-col md:flex-row'>
                     <div className='md:w-[50%] lg:w-[33%] mb-10 md:mb-0'>
-                        <h3 className='text-lg xl:text-xl pb-3 font-medium'>
-                            Stay up to date with our newsletters:
+                        <h3 className='text-lg xl:text-xl pb-2 font-medium lg:font-semibold'>
+                            Subscribe for Exclusive Discounts!
                         </h3>
 
                         <form
@@ -173,7 +173,11 @@ const Footer = () => {
                             </motion.button>
                         </form>
                         <p className=' text-[11px] opacity-80'>
-                            *By subscribing, you agree to receive our emails and updates.
+                            *By subscribing, you agree to our{' '}
+                            <Link href='/tos#user-data' className='text-accent hover:underline'>
+                                terms of service
+                            </Link>
+                            .
                         </p>
                     </div>
 
@@ -204,7 +208,7 @@ const Footer = () => {
 
                 {/* copyright text  */}
                 <p className='text-center text-sm font-light opacity-[85%] pb-6'>
-                    All rights reserved <span className='text-accent'>© 2024 WebExis.</span>
+                    All rights reserved <span className='text-accent'>© 2024 WebExis LLC.</span>
                 </p>
             </div>
         </footer>

@@ -31,57 +31,19 @@ const ContactDetails = () => {
                 </p>
             </div>
             <div className='mb-6'>
-                <h3 className='text-lg font-semibold '>Address</h3>
-                <p>Jaflong, Sylhet 3151, Bangladesh</p>
-            </div>
-            <div className='mb-6'>
-                <h3 className='text-lg font-semibold '>WhatsApp</h3>
-                <p>
-                    Text Us on{' '}
-                    <a
-                        href='https://wa.me/message/72E663G7OYAWJ1'
-                        className='text-accent hover:underline'
-                    >
-                        WhatsApp
-                    </a>
-                </p>
-            </div>
-            <div className=''>
-                <h3 className='text-lg font-semibold'>Follow Us</h3>
-                <ul className='flex gap-2 mt-1'>
-                    <li>
-                        <a
-                            href='https://www.linkedin.com/company/webexis'
-                            className='h-[40px] w-[40px] bg-darkBg-alt flex justify-center items-center rounded-full group hover:bg-accent border-[1px] border-accent/25 trainsition-colors'
-                        >
-                            <Linkedin className='h-[25px] w-[25px] fill-primary' />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href='https://www.instagram.com/webexis_/'
-                            className='h-[40px] w-[40px] bg-darkBg-alt flex justify-center items-center rounded-full group hover:bg-accent border-[1px] border-accent/25 trainsition-colors'
-                        >
-                            <Instagram className='h-[25px] w-[25px] fill-primary' />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href='https://www.facebook.com/webexis.net/'
-                            className='h-[40px] w-[40px] bg-darkBg-alt flex justify-center items-center rounded-full group hover:bg-accent border-[1px] border-accent/25 trainsition-colors'
-                        >
-                            <Facebook className='h-[25px] w-[25px] fill-primary' />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href='https://twitter.com/WebExis_'
-                            className='h-[40px] w-[40px] bg-darkBg-alt flex justify-center items-center rounded-full group hover:bg-accent border-[1px] border-accent/25 trainsition-colors'
-                        >
-                            <Twitter className='h-[25px] w-[25px] fill-primary' />
-                        </a>
-                    </li>
-                </ul>
+                <h3 className='text-lg font-semibold mb-3'>Address</h3>
+                <div className=''>
+                    <h4 className='font-medium mb-1'>United States:</h4>
+                    <p>4300 Ridgecrest Dr SE Suite L #515,</p>
+                    <p>Rio Rancho, NM 87124,</p>
+                    <p>United States</p>
+                </div>
+                <h3 className='py-5 text-lg font-semibold'>Or</h3>
+                <div className=''>
+                    <h4 className='font-medium mb-1'>Bangladesh:</h4>
+                    <p>Jaflong, Gowainghat,</p>
+                    <p>Sylhet 3151, Bangladesh</p>
+                </div>
             </div>
         </div>
     );

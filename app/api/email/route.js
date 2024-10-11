@@ -7,6 +7,15 @@ export async function POST(request) {
         await dbConnect();
         const { email } = await request.json();
 
+        const existingEmail = await Email.findOne({ email: email });
+
+        if (existingEmail) {
+            return NextResponse.json(
+                { message: 'Email already exists', OK: false },
+                { status: 409 }
+            );
+        }
+
         const newEmail = new Email({
             email: email,
         });

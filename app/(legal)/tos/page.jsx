@@ -9,17 +9,23 @@ const Tos = () => {
         <section className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-24'>
             <div className='container mx-auto px-4 md:px-0'>
                 <h1 className='text-2xl font-semibold pb-2'>TERMS OF SERVICE</h1>
-                <p className='text-lg font-medium pb-8'>Last updated October 08, 2023</p>
+                <p className='text-lg font-medium pb-8'>Last updated October 09, 2024</p>
 
                 <div className='agreement-to-legal-term pb-8'>
                     <h2 className='text-xl font-semibold pb-5'>AGREEMENT TO OUR LEGAL TERMS</h2>
                     <p className='pb-5'>
-                        We are WebExis
+                        We are WebExis LLC
                         <span className=' font-medium'>
                             {' '}
                             (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;),
                         </span>{' '}
-                        a company registered in Bangladesh at Jaflong, Sylhet 3151.
+                        a company registered in New Mexico, United States, and Bangladesh. Our New
+                        Mexico office is located at{' '}
+                        <span className='italic'>
+                            4300 Ridgecrest Dr SE, Suite L #515 Rio Rancho, NM 87124
+                        </span>
+                        , and our Bangladesh office is located at{' '}
+                        <span className='italic'>Jaflong, Sylhet 3151</span> .
                     </p>
                     <p className='pb-5'>
                         We operate the website{' '}
@@ -32,8 +38,8 @@ const Tos = () => {
                     </p>
                     <p className='pb-5'>
                         At Webexis, we&apos;re passionate about transforming businesses into digital
-                        powerhouses. We provide web development and marketing services for
-                        businesses.
+                        powerhouses. We provide web design, web development and marketing services
+                        for businesses.
                     </p>
                     <p className='pb-5'>
                         You can contact us by email at{' '}
@@ -47,8 +53,8 @@ const Tos = () => {
                     </p>
                     <p className='pb-5'>
                         These Legal Terms constitute a legally binding agreement made between you,
-                        whether personally or on behalf of an entity (&quot;you&quot;), and WebExis,
-                        concerning your access to and use of the Services. You agree that by
+                        whether personally or on behalf of an entity (&quot;you&quot;), and WebExis
+                        LLC, concerning your access to and use of the Services. You agree that by
                         accessing the Services, you have read, understood, and agreed to be bound by
                         all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS,
                         THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST
@@ -944,10 +950,10 @@ const Tos = () => {
                 <div id='law' className='mb-10'>
                     <h2 className='text-xl font-semibold pb-5'>15. GOVERNING LAW</h2>
                     <p className='pb-5'>
-                        These Legal Terms shall be governed by and defined following the laws of
-                        Bangladesh. WebExis and yourself irrevocably consent that the courts of
-                        Bangladesh shall have exclusive jurisdiction to resolve any dispute which
-                        may arise in connection with these Legal Terms.
+                        These Legal Terms shall be governed by and defined following the laws of New
+                        Mexico, United States. WebExis LLC and yourself irrevocably consent that the
+                        courts of New Mexico shall have exclusive jurisdiction to resolve any
+                        dispute which may arise in connection with these Legal Terms.
                     </p>
                 </div>
 
@@ -973,9 +979,9 @@ const Tos = () => {
                             Brussels, Avenue Louise, 146) according to the Rules of this ICAC,
                             which, as a result of referring to it, is considered as part of this
                             clause. The number of arbitrators shall be three (3). The seat, or legal
-                            place, of arbitration shall be Sylhet, Bangladesh. The language of the
-                            proceedings shall be English. The governing law of these Legal Terms
-                            shall be the substantive law of Bangladesh.
+                            place, of arbitration shall be Santa Fe, New Mexico, United States. The
+                            language of the proceedings shall be English. The governing law of these
+                            Legal Terms shall be the substantive law of New Mexico, United States.
                         </p>
                     </div>
                     <div>
@@ -1106,6 +1112,13 @@ const Tos = () => {
                         records, or to payments or the granting of credits by any means other than
                         electronic means.
                     </p>
+                    <p className='pb-5'>
+                        By submitting your email address using our newsletter sign-up forms or any
+                        other form on our Services, you expressly consent to receive marketing
+                        communications from us. You understand that you can unsubscribe at any time
+                        by clicking the unsubscribe link at the bottom of our emails or by
+                        contacting us directly.
+                    </p>
                 </div>
 
                 <div id='california' className='mb-10'>
@@ -1147,16 +1160,34 @@ const Tos = () => {
 
                 <div id='contact'>
                     <h2 className='text-xl font-semibold pb-5'>25. CONTACT US</h2>
-                    <p className='pb-5'>
+                    <p className=''>
                         In order to resolve a complaint regarding the Services or to receive further
                         information regarding use of the Services, please contact us at:
                     </p>
-                    <ul>
-                        <li className='font-semibold'>WebExis</li>
-                        <li className='font-semibold'>Jaflong, Sylhet 3151</li>
-                        <li className='font-semibold'>Bangladesh</li>
-                        <li className='font-semibold'>info@webexis.net</li>
-                    </ul>
+                    <div className='flex justify-start items-center mt-3'>
+                        <p className='text-lg font-semibold'>Email:</p>{' '}
+                        <a href='mailto:info@webexis.net' className='font-medium ml-2'>
+                            info@webexis.net
+                        </a>
+                    </div>
+
+                    <div className='pt-8'>
+                        <h3 className='pb-3 text-lg font-semibold'>United States:</h3>
+                        <ul>
+                            <li className='font-medium'>WebExis</li>
+                            <li className='font-medium'>4300 Ridgecrest Dr SE Suite L #515,</li>
+                            <li className='font-medium'>Rio Rancho, NM 87124,</li>
+                            <li className='font-medium'>United States</li>
+                        </ul>
+                    </div>
+                    <div className='pt-8'>
+                        <h3 className='pb-3 text-lg font-semibold'>Bangladesh:</h3>
+                        <ul>
+                            <li className='font-medium'>WebExis</li>
+                            <li className='font-medium'>Jaflong, Sylhet 3151</li>
+                            <li className='font-medium'>Bangladesh</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

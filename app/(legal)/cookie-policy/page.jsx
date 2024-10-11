@@ -9,11 +9,11 @@ const CookiePolicy = () => {
         <section className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-24'>
             <div className='container mx-auto px-4 md:px-0'>
                 <h1 className='text-2xl font-semibold pb-2'>COOKIE POLICY</h1>
-                <p className='text-lg font-medium pb-8'>Last updated October 08, 2023</p>
+                <p className='text-lg font-medium pb-8'>Last updated October 09, 2024</p>
                 <p className='py-5'>
-                    This Cookie Policy explains how WebExis (&quot;Company,&quot; &quot;we,&quot;
-                    &quot;us,&quot; and &quot;our&quot;) uses cookies and similar technologies to
-                    recognize you when you visit our website at{' '}
+                    This Cookie Policy explains how WebExis LLC (&quot;Company,&quot;
+                    &quot;we,&quot; &quot;us,&quot; and &quot;our&quot;) uses cookies and similar
+                    technologies to recognize you when you visit our website at{' '}
                     <Link href='/' className='text-accent hover:underline'>
                         https://webexis.net
                     </Link>{' '}
@@ -33,7 +33,7 @@ const CookiePolicy = () => {
                         as to provide reporting information.
                     </p>
                     <p className='pb-5'>
-                        Cookies set by the website owner (in this case, WebExis) are called
+                        Cookies set by the website owner (in this case, WebExis LLC) are called
                         &quot;first-party cookies.&quot; Cookies set by parties other than the
                         website owner are called &quot;third-party cookies.&quot; Third-party
                         cookies enable third-party features or functionality to be provided on or
@@ -241,20 +241,39 @@ const CookiePolicy = () => {
                     </p>
                 </div>
 
-                <div>
+                <div id='contact'>
                     <h2 className='text-xl font-semibold pb-5'>
+                        {' '}
                         Where can I get further information?
                     </h2>
-                    <p className='pb-5'>
+                    <p className=''>
                         If you have any questions about our use of cookies or other technologies,
                         please contact us at:
                     </p>
-                    <ul>
-                        <li className='font-semibold'>WebExis</li>
-                        <li className='font-semibold'>Jaflong, Sylhet 3151</li>
-                        <li className='font-semibold'>Bangladesh</li>
-                        <li className='font-semibold'>info@webexis.net</li>
-                    </ul>
+                    <div className='flex justify-start items-center mt-3'>
+                        <p className='text-lg font-semibold'>Email:</p>{' '}
+                        <a href='mailto:info@webexis.net' className='font-medium ml-2'>
+                            info@webexis.net
+                        </a>
+                    </div>
+
+                    <div className='pt-8'>
+                        <h3 className='pb-3 text-lg font-semibold'>United States:</h3>
+                        <ul>
+                            <li className='font-medium'>WebExis</li>
+                            <li className='font-medium'>4300 Ridgecrest Dr SE Suite L #515,</li>
+                            <li className='font-medium'>Rio Rancho, NM 87124,</li>
+                            <li className='font-medium'>United States</li>
+                        </ul>
+                    </div>
+                    <div className='pt-8'>
+                        <h3 className='pb-3 text-lg font-semibold'>Bangladesh:</h3>
+                        <ul>
+                            <li className='font-medium'>WebExis</li>
+                            <li className='font-medium'>Jaflong, Sylhet 3151</li>
+                            <li className='font-medium'>Bangladesh</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

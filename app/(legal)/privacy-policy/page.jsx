@@ -11,9 +11,9 @@ const CookiePolicy = () => {
                 <h1 className='text-2xl font-semibold pb-2 uppercase'>WebExis Privacy Policy</h1>
                 <p className='text-lg font-medium pb-8'>Last updated July 06, 2024</p>
                 <p className='py-5 mb-8'>
-                    This Privacy Policy describes how WebExis (&quot;Company,&quot; &quot;we,&quot;
-                    &quot;us,&quot; and &quot;our&quot;) collects, uses, and discloses your
-                    information when you use our website{' '}
+                    This Privacy Policy describes how WebExis LLC (&quot;Company,&quot;
+                    &quot;we,&quot; &quot;us,&quot; and &quot;our&quot;) collects, uses, and
+                    discloses your information when you use our website{' '}
                     <Link href='/' className='text-accent hover:underline'>
                         https://webexis.net
                     </Link>{' '}
@@ -167,6 +167,7 @@ const CookiePolicy = () => {
                         You can opt out of having your activity on the Website made available to
                         Google Analytics by installing the Google Analytics Opt-out Browser Add-on:
                         <a href='https://tools.google.com/dlpage/gaoptout' className='text-accent'>
+                            {' '}
                             https://tools.google.com/dlpage/gaoptout
                         </a>
                     </p>
@@ -222,20 +223,39 @@ const CookiePolicy = () => {
                     </p>
                 </div>
 
-                <div>
-                    <h2 className='text-xl font-semibold pb-3'>
+                <div id='contact'>
+                    <h2 className='text-xl font-semibold pb-5'>
+                        {' '}
                         Where can I get further information?
                     </h2>
-                    <p className='pb-3'>
-                        If you have any questions about our use of cookies or other technologies,
+                    <p className=''>
+                        If you have any questions about our privacy policies or other policies,
                         please contact us at:
                     </p>
-                    <ul>
-                        <li className='font-semibold'>WebExis</li>
-                        <li className='font-semibold'>Jaflong, Sylhet 3151</li>
-                        <li className='font-semibold'>Bangladesh</li>
-                        <li className='font-semibold'>info@webexis.net</li>
-                    </ul>
+                    <div className='flex justify-start items-center mt-3'>
+                        <p className='text-lg font-semibold'>Email:</p>{' '}
+                        <a href='mailto:info@webexis.net' className='font-medium ml-2'>
+                            info@webexis.net
+                        </a>
+                    </div>
+
+                    <div className='pt-8'>
+                        <h3 className='pb-3 text-lg font-semibold'>United States:</h3>
+                        <ul>
+                            <li className='font-medium'>WebExis</li>
+                            <li className='font-medium'>4300 Ridgecrest Dr SE Suite L #515,</li>
+                            <li className='font-medium'>Rio Rancho, NM 87124,</li>
+                            <li className='font-medium'>United States</li>
+                        </ul>
+                    </div>
+                    <div className='pt-8'>
+                        <h3 className='pb-3 text-lg font-semibold'>Bangladesh:</h3>
+                        <ul>
+                            <li className='font-medium'>WebExis</li>
+                            <li className='font-medium'>Jaflong, Sylhet 3151</li>
+                            <li className='font-medium'>Bangladesh</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

@@ -22,8 +22,8 @@ const page = () => {
                 bgAlt={true}
                 imgHFull={true}
             />
-            <section className='py-24 dark:bg-darkBg '>
-                <div className='container mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between '>
+            <section className='py-24 dark:bg-darkBg'>
+                <div className='container mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between items-center'>
                     <ContactDetails />
                     <ContactForm itemsEnd={true} />
                 </div>

@@ -48,7 +48,7 @@ const ContactForm = ({ itemsEnd }) => {
                 <Toaster position='bottom-right' richColors />
             </div>
             <div
-                className='flex flex-col mx-auto gap-4 md:justify-end md:items-end w-full'
+                className='flex flex-col mx-auto gap-4 md:justify-end md:items-end w-full md:pb-6'
                 style={
                     itemsEnd
                         ? { justifyContent: 'flex-start', alignItems: 'end', flex: '1 1 0%' }
@@ -60,7 +60,7 @@ const ContactForm = ({ itemsEnd }) => {
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.1 }}
-                    className='text-2xl font-semibold text-secondary dark:text-primary w-full text-center md:text-start mb-6 md:mb-0 md:min-w-[350px] lg:min-w-full'
+                    className='text-2xl font-semibold text-secondary dark:text-primary w-full text-center md:text-start mb-6 md:mb-4 md:min-w-[350px] lg:min-w-full'
                 >
                     Lets get in touch
                 </motion.h2>
