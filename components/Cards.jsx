@@ -16,7 +16,7 @@ const Cards = ({ title, desc, img, imgAlt, index }) => {
         >
             <div
                 className={`img xl:h-[200] xl:w-[280px] 2xl:h-[240px] 2xl:w-[300px] flex-1/3 mx-auto ${
-                    isLong ? 'xl:w-[450px] xl:h-[275px] mr-4 my-auto' : ''
+                    isLong ? 'xl:w-[445px] xl:h-[275px] mr-4 my-auto' : ''
                 }`}
             >
                 <Image

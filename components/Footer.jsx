@@ -137,7 +137,7 @@ const Footer = () => {
                                 required={true}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className=' py-[10px] max-h-[100px] w-[70%] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
+                                className=' py-[10px] max-h-[100px] w-[70%] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary  rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
                             />
                             <motion.button
                                 className={`w-[30%] md:w-auto lg:w-[115px] xl:w-auto py-[10px] px-0 md:px-[24px] lg:px-[10px] xl:px-[24px] dark:border-2 dark:border-accent rounded-md rounded-tl-none rounded-bl-none dark:border-l-[0px] relative radial-gradient overflow-hidden ${

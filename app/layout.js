@@ -13,11 +13,12 @@ const poppins = Poppins({
 export const metadata = {
     metadataBase: new URL('https://webexis.net'),
     title: {
-        default: 'WebExis - Your Affordable Website Design & Development Partner',
-        template: '%s | WebExis',
+        default: 'WebExis LLC - Your Affordable Website Design & Development Partner',
+        template: '%s | WebExis LLC',
     },
     keywords: [
         'webexis',
+        'webexis llc',
         'web design',
         'web design agency',
         'web development firm',
@@ -43,7 +44,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang='en' className={poppins.variable}>
+        <html lang='en' className={`${poppins.variable} scroll-smooth`}>
             <head>
                 <Script
                     async
