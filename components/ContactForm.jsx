@@ -7,7 +7,7 @@ import { Spinner } from '@/assets/svg';
 import axios from 'axios';
 import { toast, Toaster } from 'sonner';
 
-const ContactForm = ({ itemsEnd }) => {
+const ContactForm = ({}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -43,18 +43,11 @@ const ContactForm = ({ itemsEnd }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className={`flex-1  `}>
+        <form onSubmit={handleSubmit} className='md:flex-1 w-full'>
             <div>
                 <Toaster position='bottom-right' richColors />
             </div>
-            <div
-                className='flex flex-col mx-auto gap-4 md:justify-end md:items-end w-full md:pb-6'
-                style={
-                    itemsEnd
-                        ? { justifyContent: 'flex-start', alignItems: 'end', flex: '1 1 0%' }
-                        : { justifyContent: 'flex-end', alignItems: 'end' }
-                }
-            >
+            <div className='flex flex-col mx-auto gap-y-4 md:justify-end md:items-end md:pb-6'>
                 <motion.h2
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -75,7 +68,7 @@ const ContactForm = ({ itemsEnd }) => {
                     onChange={(e) => setName(e.target.value)}
                     required
                     placeholder='Your Name'
-                    className='w-full md:[400px] lg:w-full py-3 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt  text-secondary dark:text-primary'
+                    className='w-full md:[400px] lg:w-full py-3 px-4 rounded-md bg-lightBg-alt dark:bg-darkBg-alt  text-secondary dark:text-primary'
                 />
                 <motion.input
                     initial={{ y: 30, opacity: 0 }}
@@ -88,7 +81,7 @@ const ContactForm = ({ itemsEnd }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder='Your Email'
-                    className='w-full md:[400px] lg:w-full py-3 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
+                    className='w-full md:[400px] lg:w-full py-3 px-4 rounded-md bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
                 />
                 <input type='hidden' name='_gotcha' className='hidden' />
                 <motion.textarea
@@ -102,7 +95,7 @@ const ContactForm = ({ itemsEnd }) => {
                     required
                     rows={6}
                     placeholder='Tell us about your project to get a free quote!'
-                    className='w-full md:[400px] lg:w-full py-3 px-4 rounded bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
+                    className='w-full md:[400px] lg:w-full py-3 px-4 rounded-md bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
                 />
 
                 <motion.button

@@ -37,22 +37,25 @@ const faqs = [
 const Faq = () => {
     return (
         <section className='bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary py-24'>
-            <div className='container mx-auto px-4 lg:px-0'>
+            <div className='container mx-auto px-4 xl:px-0'>
                 <div className='mb-24 text-center'>
                     <h2 className='text-3xl font-bold '>FAQ</h2>
                     <p>Answers to Common Inquiries</p>
                 </div>
-                <div className='flex flex-col md:flex-row justify-between shrink-0 gap-5 flex-1'>
-                    <div className='mx-auto w-[350px] md:h-[500px] md:w-[400px] rounded-xl overflow-hidden group'>
-                        <Image
-                            src={'/faq.jpg'}
-                            alt=''
-                            width={400}
-                            height={400}
-                            className='w-full h-full object-cover group-hover:scale-[105%] transition-all ease-in-out duration-500'
-                        />
+                <div className='flex flex-col lg:flex-row justify-between shrink-0 gap-5 flex-1'>
+                    <div className='flex justify-center items-start'>
+                        <div className='w-[350px] md:h-[500px] md:w-[400px] rounded-xl overflow-hidden group'>
+                            <Image
+                                src={'/faq.jpg'}
+                                alt=''
+                                width={400}
+                                height={400}
+                                className='w-full h-full object-cover group-hover:scale-[105%] transition-all ease-in-out duration-500'
+                            />
+                        </div>
                     </div>
-                    <div className='w-full md:w-[60%]'>
+
+                    <div className='w-full lg:w-[60%] md:mt-8 lg:mt-0'>
                         {faqs.map((faq, i) => (
                             <FaqAccordion
                                 key={faq.id}

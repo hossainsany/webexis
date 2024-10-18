@@ -1,30 +1,39 @@
 'use client';
 
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CTA, ErrorAnimate, Filter, LoadingAnimate, PageHero, ProjectCard } from '@/components';
 import CaseStudyContext from '@/context/CaseStudyContext';
 
 const PortfolioPage = () => {
+    const { projects, isPending, error } = useContext(CaseStudyContext);
+
     const [industry, setIndustry] = useState('all');
     const [techStack, setTechStack] = useState('all');
+    const [selectedProjects, setSelectedProjects] = useState(projects);
 
-    const { projects, setProjects, isPending, error } = useContext(CaseStudyContext);
+    const filter = () => {
+        const filteredProjects =
+            projects &&
+            projects.filter((project) => {
+                const projectTags = project.caseStudy.tags.map((tag) => tag.toLowerCase());
+                const industyMatch =
+                    industry === 'all' || projectTags.some((tag) => tag.includes(industry));
+                const techStackMatch =
+                    techStack === 'all' || projectTags.some((tag) => tag.includes(techStack));
+                return industyMatch && techStackMatch;
+            });
+
+        setSelectedProjects(filteredProjects);
+    };
 
     const handleFilter = (e) => {
         e.preventDefault();
-
-        const filterded = caseStudiesData.filter(({ caseStudy }) => {
-            const industryMatch =
-                industry === 'all' ||
-                caseStudy.tags.some((tag) => tag.toLowerCase().includes(industry.toLowerCase()));
-            const techStackMatch =
-                techStack === 'all' ||
-                caseStudy.tags.some((tag) => tag.toLowerCase().includes(techStack.toLowerCase()));
-
-            return industryMatch && techStackMatch;
-        });
-        setProjects(filterded);
+        filter();
     };
+
+    useEffect(() => {
+        filter();
+    }, [projects, industry, techStack]);
 
     const headingText =
         "Explore how we've transformed businesses with our expert web solutions. From boosting sales for restaurants and digital marketers to crafting WordPress plugin pages and roofing company sites, we deliver proven success.";
@@ -65,8 +74,8 @@ const PortfolioPage = () => {
                                 />
                             </div>
                         ) : (
-                            projects &&
-                            projects.map((singleStudy) => (
+                            selectedProjects &&
+                            selectedProjects.map((singleStudy) => (
                                 <ProjectCard
                                     caseStudy={singleStudy.caseStudy}
                                     key={singleStudy._id}

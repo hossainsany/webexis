@@ -16,7 +16,7 @@ const Portfolio = () => {
 
     return (
         <section className='py-24 bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'>
-            <div className='container mx-auto px-4 lg:px-0'>
+            <div className='container mx-auto px-4 xl:px-0'>
                 <div className='mb-20'>
                     <h2 className='text-2xl font-semibold text-center'>Explore Our Portfolio</h2>
                     <p className='text-center'>See How We Transformed Businesses</p>

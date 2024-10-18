@@ -1,11 +1,12 @@
 import Link from 'next/link';
 
-const RedirectLink = ({ href, newTab, children }) => {
+const RedirectLink = ({ href, newTab = true, children }) => {
     return (
         <Link
             href={href}
+            rel='noopener noreferrer'
             target={newTab ? '_blank' : ''}
-            className='flex justify-center items-center text-sm  fill-primary  transition-all bg-darkBg-alt/65 px-[10px] md:px-4 py-[6px] rounded-md hover:bg-accent duration-300 hover:shadow-md'
+            className='flex justify-center items-center text-sm fill-primary text-primary transition-all bg-accent/90 dark:bg-accent/45 px-[10px] md:px-4 py-[6px] rounded-md hover:bg-accent duration-300 hover:shadow-md'
         >
             {children + ' '}
             {newTab && (

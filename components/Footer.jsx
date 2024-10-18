@@ -23,8 +23,8 @@ const footerLinks = [
         title: 'Socials',
         id: 2,
         content: [
-            { text: 'LinkedIn', link: 'https://www.linkedin.com/company/webexis' },
-            { text: 'Insagram', link: 'https://instagram.com/webexis_/' },
+            { text: 'Linkedin', link: 'https://www.linkedin.com/company/webexis' },
+            { text: 'Instagram', link: 'https://instagram.com/webexis_/' },
             { text: 'Twitter', link: 'https://twitter.com/webexis_' },
             { text: 'Facebook', link: 'https://www.facebook.com/webexis.net' },
         ],
@@ -91,7 +91,7 @@ const Footer = () => {
 
     return (
         <footer className='bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'>
-            <div className='container mx-auto px-4 lg:px-0'>
+            <div className='container mx-auto px-4 xl:px-0'>
                 {/* toast */}
                 <div>
                     <Toaster position='bottom-right' expand={false} richColors />
@@ -137,7 +137,7 @@ const Footer = () => {
                                 required={true}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className=' py-[10px] max-h-[100px] w-[70%] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary  rounded-bl rounded-tl focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
+                                className=' py-[10px] max-h-[100px] w-[70%] px-4 md:w-[215px] lg:w-[210px] xl:w-[255px] bg-lightBg text-secondary  rounded-bl-md rounded-tl-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:focus-visible:outline-white focus-visible:box-border dark:border-2 dark:border-accent dark:border-r-[0px]'
                             />
                             <motion.button
                                 className={`w-[30%] md:w-auto lg:w-[115px] xl:w-auto py-[10px] px-0 md:px-[24px] lg:px-[10px] xl:px-[24px] dark:border-2 dark:border-accent rounded-md rounded-tl-none rounded-bl-none dark:border-l-[0px] relative radial-gradient overflow-hidden ${
@@ -194,6 +194,7 @@ const Footer = () => {
                                         <li key={item.link}>
                                             <Link
                                                 href={item.link}
+                                                rel='noopener noreferrer'
                                                 className='hover:text-accent text-sm transition mb-1.5'
                                             >
                                                 {item.text}
@@ -207,7 +208,25 @@ const Footer = () => {
                 </div>
 
                 {/* copyright text  */}
-                <p className='text-center text-sm font-light opacity-[85%] pb-6'>
+                <div className=' flex justify-center items-center w-full'>
+                    <a
+                        className='inline-block text-center items-center text-sm font-light opacity-[85%] hover:underline'
+                        href='https://donate.unrwa.org/-landing-page/en_EN'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        Donate to support families affected by the crisis in Palestine.
+                        <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            viewBox='0 0 512 512'
+                            className='inline-block h-[14px] w-[14px] ml-2 fill-accent flex-shrink-0'
+                        >
+                            <path d='M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z' />
+                        </svg>
+                    </a>
+                </div>
+
+                <p className='text-center text-sm font-light opacity-[85%] pb-4'>
                     All rights reserved <span className='text-accent'>© 2024 WebExis LLC.</span>
                 </p>
             </div>

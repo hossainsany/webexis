@@ -12,7 +12,7 @@ const Cards = ({ title, desc, img, imgAlt, index }) => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeInOut', delay: index * 0.12 }}
-            className='bg-lightBg-alt dark:bg-tertiary rounded p-4 flex flex-col first:flex-col  md:first:flex-row  last:flex-col first:col-span-1 md:first:col-span-2 last:col-span-1 md:last:col-span-2 md:last:flex-row'
+            className='bg-lightBg-alt dark:bg-tertiary rounded-md p-4 flex flex-col first:flex-col  md:first:flex-row  last:flex-col first:col-span-1 md:first:col-span-2 last:col-span-1 md:last:col-span-2 md:last:flex-row'
         >
             <div
                 className={`img xl:h-[200] xl:w-[280px] 2xl:h-[240px] 2xl:w-[300px] flex-1/3 mx-auto ${

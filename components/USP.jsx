@@ -39,7 +39,7 @@ const USP = () => {
             className='py-24 bg-lightBg-alt dark:bg-darkBg-alt text-secondary dark:text-primary'
             id='usp'
         >
-            <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 lg:px-0'>
+            <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 xl:px-0'>
                 <div className='text md:w-[52%] lg:w-[46%] order-2 md:order-1'>
                     <ul>
                         <motion.h2
