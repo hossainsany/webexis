@@ -1,9 +1,10 @@
 import { Footer, Navbar } from '@/components';
 import CaseStudyProvider from '@/context/CaseStudProvider';
-import { Poppins } from 'next/font/google';
-import './globals.css';
 import Script from 'next/script';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import { Poppins } from 'next/font/google';
 import Flag from '@/components/Flag';
+import './globals.css';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -57,23 +58,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang='en' className={`${poppins.variable} scroll-smooth`}>
-            <head>
-                <Script
-                    async
-                    src='https://www.googletagmanager.com/gtag/js?id=G-3GCZVVD910'
-                ></Script>
-                <Script id='google-analytics'>
-                    {`  window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-
-                        gtag('config', 'G-3GCZVVD910');`}
-                </Script>
-                <script
-                    type='application/ld+json'
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-            </head>
+            <GoogleTagManager gtmId='G-3GCZVVD910' />
+            <Script
+                id='json-ld'
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <body className='font-poppins bg-lightBg dark:bg-darkBg'>
                 <CaseStudyProvider>
                     <Navbar />
@@ -81,6 +71,7 @@ export default function RootLayout({ children }) {
                     <Footer />
                     <Flag />
                 </CaseStudyProvider>
+                <GoogleAnalytics gaId='G-3GCZVVD910' />
             </body>
         </html>
     );

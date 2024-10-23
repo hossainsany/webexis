@@ -3,9 +3,10 @@
 import { Member } from '@/components';
 import { members } from '@/data';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 
-const MemberPage = ({ params }) => {
+const MemberPage = props => {
+    const params = use(props.params);
     const slug = params.name;
     const [currentMember, setCurrentMember] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

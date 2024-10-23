@@ -1,10 +1,11 @@
 'use client';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, use } from 'react';
 import CaseStudyContext from '@/context/CaseStudyContext';
 import { CaseStudy, CaseStudyHeader, ErrorAnimate, LoadingAnimate } from '@/components';
 
-const ProjectPage = ({ params }) => {
+const ProjectPage = props => {
+    const params = use(props.params);
     const slug = params.project;
     const { projects, isPending, error } = useContext(CaseStudyContext);
 

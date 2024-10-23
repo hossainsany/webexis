@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const NotFound = () => {
     return (
         <main className='min-h-[60vh] flex justify-center items-center text-center bg-lightBg dark:bg-darkBg text-secondary dark:text-primary'>
@@ -8,9 +10,9 @@ const NotFound = () => {
                 </h1>
                 <p className='pt-4 text-lg'>
                     Navigate back to the{' '}
-                    <a href='/' className='text-accent font-semibold hover:underline'>
+                    <Link href='/' className='text-accent font-semibold hover:underline'>
                         homepage
-                    </a>
+                    </Link>
                     .
                 </p>
             </div>
