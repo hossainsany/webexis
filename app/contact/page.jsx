@@ -23,7 +23,7 @@ const page = () => {
                 imgHFull={true}
             />
             <section className='py-24 dark:bg-darkBg'>
-                <div className='container mx-auto px-4 xl:px-0 flex flex-col md:flex-row justify-between items-center'>
+                <div className='container mx-auto px-4 xl:px-0 flex flex-col md:flex-row justify-between items-start md:items-center'>
                     <ContactDetails />
                     <ContactForm />
                 </div>

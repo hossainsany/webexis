@@ -51,4 +51,4 @@ const caseStudySchema = new mongoose.Schema({
 
 const CaseStudy = mongoose.models.CaseStudy || mongoose.model('CaseStudy', caseStudySchema);
 
-module.exports = CaseStudy;
+export default CaseStudy;

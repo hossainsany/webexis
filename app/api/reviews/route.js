@@ -14,6 +14,6 @@ export const GET = async (request) => {
         });
     } catch (err) {
         console.error('Error in /api/review:', err);
-        return NextResponse({ error: 'Failed to fetch reviews', OK: false }, { status: 500 });
+        return NextResponse.json({ error: 'Failed to fetch reviews', OK: false }, { status: 500 });
     }
 };

@@ -1,6 +1,5 @@
 'use client';
 
-import { Facebook, Instagram, Linkedin, Twitter } from '@/assets/svg';
 import { useState } from 'react';
 import { toast, Toaster } from 'sonner';
 

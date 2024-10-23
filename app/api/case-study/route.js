@@ -14,7 +14,7 @@ export async function GET(request) {
         });
     } catch (err) {
         console.error('Error in /api/case-study:', err);
-        return NextResponse({ error: 'Failed to fetch case studies' }, { status: 500 });
+        return NextResponse.json({ error: 'Failed to fetch case studies' }, { status: 500 });
     }
 }
 

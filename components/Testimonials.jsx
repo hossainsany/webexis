@@ -24,7 +24,6 @@ const Testimonials = () => {
                 const res = await axios.get('/api/reviews');
 
                 setReviews(res.data);
-                console.log(reviews);
             } catch (error) {
                 console.error('Failed to fetch reviews:', error);
             }
