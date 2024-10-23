@@ -60,7 +60,7 @@ const page = () => {
                 />
             ))}
             <Faq />
-            <CTA bgAlt={true} />
+            <CTA bgAlt={false} />
         </>
     );
 };

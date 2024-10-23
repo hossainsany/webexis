@@ -85,7 +85,7 @@ const PortfolioPage = () => {
                     </div>
                 </div>
             </div>
-            <CTA bgAlt={true} />
+            <CTA bgAlt={false} />
         </>
     );
 };
