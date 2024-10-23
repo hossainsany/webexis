@@ -41,17 +41,17 @@ const USP = () => {
         >
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-center px-4 xl:px-0'>
                 <div className='text md:w-[52%] lg:w-[46%] order-2 md:order-1'>
+                    <motion.h2
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: 'easeInOut' }}
+                        className='text-2xl font-semibold pb-4'
+                    >
+                        Why Choose <span className='text-accent '>Webexis</span> for Your Service
+                        Business Website Design?
+                    </motion.h2>
                     <ul>
-                        <motion.h2
-                            initial={{ y: 50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, ease: 'easeInOut' }}
-                            className='text-2xl font-semibold pb-4'
-                        >
-                            Why Choose <span className='text-accent '>Webexis</span> for Your
-                            Service Business Website Design?
-                        </motion.h2>
                         {items.map((item, i) => (
                             <motion.li
                                 initial={{ y: 50, opacity: 0 }}

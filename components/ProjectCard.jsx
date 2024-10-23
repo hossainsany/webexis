@@ -20,11 +20,11 @@ const ProjectCard = ({ caseStudy, i }) => {
 
     return (
         <motion.div
-            initial={{ y: 97, opacity: 0, scale: 0.96 }}
+            initial={{ y: 99.5, opacity: 0, scale: 1.05 }}
             whileInView={{ y: 0, opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: 'easeIn', delay: i * 0.03 }}
-            className={`group w-full lg:w-full xl:w-full p-4 md:p-6 lg:p-10 mb-10 rounded-md bg-lightBg dark:bg-darkBg flex flex-col lg:flex-row hover:shadow-lg lg:overflow-x-hidden transition-shadow`}
+            transition={{ duration: 0.6, ease: 'easeIn', delay: i * 0.03 }}
+            className={`group w-full lg:w-full xl:w-full p-4 md:p-6 lg:p-10 mb-10 rounded-md bg-lightBg dark:bg-darkBg flex flex-col lg:flex-row hover:shadow-sm lg:overflow-x-hidden transition-shadow`}
         >
             <div className='lg:basis-[25%] xl:basis-1/4  order-2 lg:order-1 mb-6 md:mb-0 flex flex-col md:max-h-[120px] lg:max-h-[300px]'>
                 <h3 className='text-2xl md:text-[30px] lg:text-[30px] lg:leading-10 font-bold capitalize mb-4 md:mb-5 mt-0'>
@@ -63,9 +63,9 @@ const ProjectCard = ({ caseStudy, i }) => {
                     <Image
                         src={caseStudy.content.img2}
                         alt='project image'
-                        width={300}
-                        height={300}
-                        className='block h-full w-full object-cover group-hover:scale-[105%] transition-all duration-300 ease-out'
+                        width={280}
+                        height={318}
+                        className='flex h-full w-full object-cover group-hover:scale-[103%] transition-all duration-700 ease-out'
                     />
                 </div>
             </div>

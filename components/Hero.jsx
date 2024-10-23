@@ -9,9 +9,15 @@ const Hero = () => {
     return (
         <section
             id='hero'
-            style={{ background: 'url("/hero-bg.png")', backgroundSize: 'cover' }}
             className='relative bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-10 md:pt-28 md:pb-24  min-h-[94vh] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[""] before:dark:bg-darkBg before:z-[-1] flex items-center justify-center'
         >
+            <Image
+                src={'/hero-bg.png'}
+                fill
+                quality={90}
+                alt='webexis wave background'
+                className='object-cover'
+            />
             <Link
                 href='#usp'
                 className='absolute hidden md:block bottom-[30px] left-1/2 transform translate-x-[-50%] w-[30px] h-[30px] cursor-pointer'

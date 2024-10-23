@@ -8,7 +8,7 @@ export default function Home() {
             <Services />
             <Portfolio />
             <Testimonials />
-            <CTA bgAlt={false} />
+            <CTA bgAlt={true} />
             <Contact />
         </>
     );

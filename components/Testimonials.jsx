@@ -103,12 +103,14 @@ const Testimonials = () => {
                 <div className='absolute bottom-[-50px] left-[50%] translate-x-[-50%] translate-y-[50%] flex justify-center items-center'>
                     <button
                         onClick={handlePrev}
+                        aria-label='Previous slide'
                         className='px-1 h-[32px] w-[32px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 hover:bg-accent transition-all '
                     >
                         <AngleLeft className='h-[25px] w-[25px] fill-secondary dark:fill-primary' />
                     </button>
                     <button
                         onClick={handleNext}
+                        aria-label='Next slide'
                         className='px-1 h-[32px] w-[32px] bg-accent/[0.3] z-10 flex items-center justify-center text-primary rounded-full mr-2 opacity-80 hover:opacity-100 hover:bg-accent transition-all '
                     >
                         <AngleRight className='h-[25px] w-[25px] fill-secondary dark:fill-primary' />

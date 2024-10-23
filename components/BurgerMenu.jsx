@@ -13,6 +13,8 @@ const BurgerMenu = ({ clicked, onSetClicked }) => {
             animate={clicked ? 'open' : 'closed'}
             className='relative cursor-pointer min-w-[30px] h-10 w-10 z-10'
             role='button'
+            aria-label={clicked ? 'Close menu' : 'Open menu'}
+            aria-expanded={clicked}
         >
             <motion.span
                 style={{ top: '25%', left: '50%', x: '-50%', y: '-50%' }}
