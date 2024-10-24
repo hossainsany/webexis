@@ -12,9 +12,11 @@ const Hero = () => {
             className='relative bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-10 md:pt-28 md:pb-24  min-h-[94vh] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[""] before:dark:bg-darkBg before:z-[-1] flex items-center justify-center'
         >
             <Image
+                priority
                 src={'/hero-bg.png'}
                 fill
                 quality={90}
+                placeholder="blur"
                 alt='webexis wave background'
                 className='object-cover'
             />
