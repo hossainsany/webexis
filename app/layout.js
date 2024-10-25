@@ -59,7 +59,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang='en' className={`${poppins.variable} scroll-smooth`}>
-            <GoogleTagManager gtmId='G-3GCZVVD910' />
+            <GoogleTagManager gtmId='G-H76HVDPMYT' />
             <Script
                 id='json-ld'
                 type='application/ld+json'
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
                     <Footer />
                     <Flag />
                 </CaseStudyProvider>
-                <GoogleAnalytics gaId='G-3GCZVVD910' />
+                <GoogleAnalytics gaId='G-H76HVDPMYT' />
             </body>
         </html>
     );
