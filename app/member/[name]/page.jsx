@@ -1,11 +1,11 @@
 'use client';
 
-import { Member } from '@/components';
+import { Member, NotFound } from '@/components';
 import { members } from '@/data';
 import Image from 'next/image';
 import { useEffect, useState, use } from 'react';
 
-const MemberPage = props => {
+const MemberPage = (props) => {
     const params = use(props.params);
     const slug = params.name;
     const [currentMember, setCurrentMember] = useState([]);
@@ -16,13 +16,13 @@ const MemberPage = props => {
     }, [slug]);
 
     useEffect(() => {
-        setIsLoading(currentMember.length < 1 ? true : false);
+        setIsLoading(currentMember < 1 ? true : false);
     }, [currentMember]);
 
     return (
         <>
             {isLoading && (
-                <section className='min-h-[60vh] flex justify-center items-center'>
+                <section className={`min-h-[60vh] flex justify-center items-center `}>
                     <div className=''>
                         <div>
                             <svg
@@ -39,8 +39,12 @@ const MemberPage = props => {
                     </div>
                 </section>
             )}
+            {!currentMember && <NotFound />}
             {currentMember && !isLoading && (
-                <section className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-12 md:py-24'>
+                <section
+                    className='bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-12 md:py-24'
+                    rel={`${currentMember.slug === 'hossainsany' ? 'canonical' : ''}`}
+                >
                     <div className='container mx-auto px-4'>
                         <Member
                             name={currentMember.name}

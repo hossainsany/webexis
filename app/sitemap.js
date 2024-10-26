@@ -13,20 +13,24 @@ export default async function sitemap() {
             lastModified: new Date(),
         },
         {
+            url: 'https://webexis.net/case-studies/easyielts-bd-website-case-study',
+            lastModified: new Date(),
+        },
+        {
+            url: 'https://webexis.net/case-studies/webexis-website-redesign-case-study',
+            lastModified: new Date(),
+        },
+        {
             url: 'https://webexis.net/case-studies/mosaic-plugin-landing-page-case-study',
             lastModified: new Date(),
         },
+
         {
             url: 'https://webexis.net/case-studies/sampan-restaurant-website-case-study',
             lastModified: new Date(),
         },
         {
-            url: 'https://webexis.net/case-studies/webexis-website-case-study',
-            lastModified: new Date(),
-        },
-
-        {
-            url: 'https://webexis.net/case-studies/frontend-youtube-case-study',
+            url: 'https://webexis.net/contact',
             lastModified: new Date(),
         },
         {
@@ -39,10 +43,6 @@ export default async function sitemap() {
         },
         {
             url: 'https://webexis.net/member/shahedahmed',
-            lastModified: new Date(),
-        },
-        {
-            url: 'https://webexis.net/contact',
             lastModified: new Date(),
         },
         {

@@ -19,14 +19,14 @@ const jsonLd = {
     name: 'WebExis',
     image: '/logo.png',
     description:
-        'Discover affordable website design and development services at Webexis. Our web design company offers tailored website design packages starting from just $499. Partner with our experienced web developers to enhance your online presence and drive business growth with custom solutions that fit your budget.',
+        'Increase your online visibility with website design packages starting from just $999 at WebExis. Partner with us for tailored, budget-friendly solutions.',
 };
 
 export const metadata = {
     metadataBase: new URL('https://webexis.net'),
     title: {
-        default: 'WebExis LLC - Your Affordable Website Design & Development Partner',
-        template: '%s | WebExis LLC',
+        default: 'WebExis - Your Affordable Website Design & Development Partner',
+        template: '%s | WebExis',
     },
     keywords: [
         'webexis',
@@ -46,13 +46,15 @@ export const metadata = {
         'best website creators',
     ],
     description:
-        'Discover affordable website design and development services at Webexis. Our web design company offers tailored website design packages starting from just $499. Partner with our experienced web developers to enhance your online presence and drive business growth with custom solutions that fit your budget.',
+        'Increase your online visibility with website design packages starting from just $999 at WebExis. Partner with us for tailored, budget-friendly solutions.',
     openGraph: {
         title: 'WebExis LLC - Your Affordable Website Design & Development Partner',
         siteName: 'WebExis',
         description:
-            'Discover affordable website design and development services at Webexis. Our web design company offers tailored website design packages starting from just $499. Partner with our experienced web developers to enhance your online presence and drive business growth with custom solutions that fit your budget.',
+            'Increase your online visibility with website design packages starting from just $999 at WebExis. Partner with us for tailored, budget-friendly solutions.',
         images: [''],
+        type: 'website',
+        url: 'https://webexis.net',
     },
 };
 

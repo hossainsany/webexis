@@ -46,7 +46,7 @@ const PageHero = ({
                     >
                         <Image
                             src={headingImg}
-                            alt=''
+                            alt={`${headingTitle} image`}
                             height={400}
                             width={660}
                             className='h-full w-full object-cover'

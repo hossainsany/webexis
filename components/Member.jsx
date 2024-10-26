@@ -9,7 +9,7 @@ const Member = ({ name, position, img, contacts }) => {
                         src={img}
                         width={500}
                         height={500}
-                        alt={`${name} Webexis ${position}'s image`}
+                        alt={`Image of ${name}, ${position} at WebExis.`}
                         className='w-full h-full object-cover'
                     />
                 </div>

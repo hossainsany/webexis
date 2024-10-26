@@ -34,9 +34,9 @@ const CaseStudyHeader = ({ currentProject }) => {
                 </div>
                 {currentProject && (
                     <div className='hidden lg:flex max-w-full md:max-w-[400px] justify-center text-center xl:justify-start xl:text-start flex-wrap gap-y-8 xl:gap-y-4 text-primary'>
-                        <div className='opacity-90 rounded-full border-[6px] xl:border-[10px] border-white/90 w-[150px] xl:w-[220px]'>
+                        <div className='opacity-90  w-[150px] xl:w-[220px]'>
                             <Image
-                                src='/logo.png'
+                                src='/webexis-logo.png'
                                 height={220}
                                 width={220}
                                 alt='webexis logo'

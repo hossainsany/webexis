@@ -9,17 +9,17 @@ const Hero = () => {
     return (
         <section
             id='hero'
-            className='relative bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-10 md:pt-28 md:pb-24  min-h-[94vh] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[""] before:dark:bg-darkBg before:z-[-1] flex items-center justify-center'
+            className='relative bg-lightBg dark:bg-darkBg text-secondary dark:text-primary py-10 md:pt-28 md:pb-24  min-h-[94vh] flex items-center justify-center'
         >
             <Image
                 priority
                 src={'/hero-bg.png'}
                 fill
                 quality={90}
-                placeholder="blur"
                 alt='webexis wave background'
-                className='object-cover'
+                className='object-cover '
             />
+
             <Link
                 href='#usp'
                 className='absolute hidden md:block bottom-[30px] left-1/2 transform translate-x-[-50%] w-[30px] h-[30px] cursor-pointer'
@@ -36,7 +36,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className='container flex flex-col lg:flex-row justify-between items-center mx-auto '
+                className='container flex flex-col lg:flex-row justify-between items-center mx-auto z-10'
             >
                 <div className=' lg:w-[45%] order-2 lg:order-1 px-4'>
                     <h1 className='text-4xl lg:text-6xl font-bold mt-4 lg:mt-0 mb-4'>
