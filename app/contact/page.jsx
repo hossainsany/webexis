@@ -1,9 +1,5 @@
 import { ContactDetails, ContactForm, PageHero } from '@/components';
 
-export const metadata = {
-    title: 'Contact Us',
-};
-
 const page = () => {
     const headingText =
         'Ready to elevate your online presence? Contact WebExis today to discuss your web design or development needs. Whether you need a stunning website or a custom web solution, our team is here to help you succeed.';

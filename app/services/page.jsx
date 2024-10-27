@@ -1,10 +1,6 @@
 import { CTA, PageHero, ServicesSection } from '@/components';
 import Faq from '@/components/Faq';
 
-export const metadata = {
-    title: 'Services We Offer',
-};
-
 const data = [
     {
         id: 1,
