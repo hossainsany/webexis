@@ -1,4 +1,4 @@
-<img src="./public/logo.png" alt="Webexis Logo" width="200" height="auto">
+<img src="./public/webexis-logo.png" alt="Webexis Logo" width="200" height="auto">
 
 # Welcome to Webexis
 
