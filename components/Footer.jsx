@@ -227,7 +227,7 @@ const Footer = () => {
                 </div>
 
                 <p className='text-center text-sm font-light opacity-[85%] pb-4'>
-                    All rights reserved <span className='text-accent'>© 2024 WebExis LLC.</span>
+                    All rights reserved <span className='text-accent'>© 2025 WebExis LLC.</span>
                 </p>
             </div>
         </footer>
